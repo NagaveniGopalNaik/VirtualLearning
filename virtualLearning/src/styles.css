@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* biko font family */
+@import url(//db.onlinewebfonts.com/c/e5d18e657f83f8750cd54c899de3a38b?family=Biko);
+
+
+/* Proxima nova soft */
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
+/* Avenir font */
+@import url('https://fonts.cdnfonts.com/css/avenir');
+
+
+html, body {  
+width: 100%;
+font-size: 62.5%;
+line-height: 62.5%;
+text-align: center;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
