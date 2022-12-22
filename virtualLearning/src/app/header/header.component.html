@@ -1,0 +1,219 @@
+<mat-card class="header-body">
+  <div class="header-part">
+    <div class="image">
+      <img src="../../assets/images/Group 118.png" alt="" class="img point" />
+    </div>
+    <div class="search-part-div">
+      <div class="search" [class.flexReverse]="searchOk == true">
+        <mat-icon class="search-icon" (click)="searchKey()">search</mat-icon>
+        <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
+        <input
+          type="text"
+          placeholder="Search"
+          (click)="searchCourse()"
+          [(ngModel)]="searchKeyData"
+          (keyup)="searchKey()"
+        />
+        
+      </div>
+      <div class="filter point" [class.search-ok]="searchOk == true" (click)="filter_course()">
+        <img
+          src="../../assets/images/Mask_Group_9 Clipped.png"
+          alt=""
+          width="70%"
+          height="70%"
+        />
+      </div>
+    </div>
+    <div class="profile-notification" [class.close]="searchOk == true">
+      <div class="notification-image">
+        <img
+          src="../../assets/images/Bell@2x.png"
+          alt=""
+          class="notification point"
+        />
+      </div>
+      <div class="setting" (click)="displayDropDown()">
+        <img
+          src="../../assets/images/Gear@2x.png"
+          alt=""
+          class="setting-image point"
+        />
+      </div>
+      <div class="profile">
+        <img
+          src="../../assets/images/Screenshot 2021-04-01 at 7.54.07 AM.png"
+          alt=""
+          class="profile-image point"
+        />
+      </div>
+    </div>
+    <div class="close point" [class.search-ok]="searchOk == true">
+      <mat-icon class="color" (click)="closeSearch()">close</mat-icon>
+    </div>
+  </div>
+  <div class="search-part" [class.search-ok]="searchOk == true" *ngIf="searchOption == true">
+    <div class="top-search">
+      <p class="search-head">Top Search</p>
+      <div class="button-list">
+        <button mat-raised-button class="top-search-button">Java</button>
+        <button mat-raised-button class="top-search-button">Angular</button>
+        <button mat-raised-button class="top-search-button">JavaScript</button>
+        <button mat-raised-button class="top-search-button">Designing</button>
+        <button mat-raised-button class="top-search-button">
+          Data analyst
+        </button>
+        <button mat-raised-button class="top-search-button">
+          Backend course
+        </button>
+      </div>
+    </div>
+    <div class="top-search">
+      <p class="search-head">Search from Categories</p>
+      <div class="button-list gap">
+        <img
+          src="../../assets/images/Group_3130.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Design')"
+        />
+        <img
+          src="../../assets/images/Group_3129.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Development')"
+        />
+        <img
+          src="../../assets/images/Group_3131.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Business')"
+        />
+        <img
+          src="../../assets/images/Group_3132.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Finance')"
+        />
+        <img
+          src="../../assets/images/Group_3133.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Health & Fitness')"
+        />
+        <img
+          src="../../assets/images/Group_3134.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Music')"
+        />
+        <img
+          src="../../assets/images/Group_3135.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('It & Software')"
+        />
+        <img
+          src="../../assets/images/Group_3136.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Marketing')"
+        />
+        <img
+          src="../../assets/images/Group_3137.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('LifeStyle')"
+        />
+        <img
+          src="../../assets/images/Group_3138.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Photography')"
+        />
+        <img
+          src="../../assets/images/Group_3139.png"
+          alt=""
+          class="search-category point"
+          (click)="searchCatogary('Teaching')"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="search-data" *ngIf="searchOption == false">
+  <div class="search-datas">
+      <div class="image-details">
+          <div class="course-image">
+              <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+       <div class="courseDetails">
+           <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+           <p class="chapterCount">14 Chapter</p>
+           <button class="course-button">Design</button>
+       </div>
+          </div>
+      </div>
+  </div>
+  <div class="search-datas">
+    <div class="image-details">
+        <div class="course-image">
+            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+     <div class="courseDetails">
+         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+         <p class="chapterCount">14 Chapter</p>
+         <button class="course-button">Design</button>
+     </div>
+        </div>
+    </div>
+</div>
+<div class="search-datas">
+    <div class="image-details">
+        <div class="course-image">
+            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+     <div class="courseDetails">
+         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+         <p class="chapterCount">14 Chapter</p>
+         <button class="course-button">Design</button>
+     </div>
+        </div>
+    </div>
+</div>
+<div class="search-datas">
+    <div class="image-details">
+        <div class="course-image">
+            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+     <div class="courseDetails">
+         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+         <p class="chapterCount">14 Chapter</p>
+         <button class="course-button">Design</button>
+     </div>
+        </div>
+    </div>
+</div>
+<div class="search-datas">
+    <div class="image-details">
+        <div class="course-image">
+            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+     <div class="courseDetails">
+         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+         <p class="chapterCount">14 Chapter</p>
+         <button class="course-button">Design</button>
+     </div>
+        </div>
+    </div>
+</div>
+  </div>
+</mat-card>
+<mat-card class="dropdown" [class.click-setting]="display_dropdown == true">
+  <div class="option border" (click)="close()">
+    <mat-icon class="point">school</mat-icon>
+    <p class="point">My Course</p>
+  </div>
+  <div class="option border" (click)="close()">
+    <mat-icon class="point">person_outline</mat-icon>
+    <p class="point">My Profile</p>
+  </div>
+  <div class="option" (click)="close()">
+    <mat-icon class="point">logout</mat-icon>
+    <p class="point">Logout</p>
+  </div>
+</mat-card>

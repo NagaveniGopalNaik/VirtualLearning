@@ -7,6 +7,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const material =[
   MatButtonModule,
@@ -15,7 +16,8 @@ const material =[
   MatStepperModule,
   MatTreeModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatDialogModule
 ];
 
 @NgModule({

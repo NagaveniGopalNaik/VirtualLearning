@@ -4,8 +4,11 @@
 
 
 /* Proxima nova soft */
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 
+@font-face {
+    font-family: Proxima Nova Soft;
+    src: url('./assets/Fonts/ProximaNovaSoft-Regular.otf');
+}
 /* Avenir font */
 @import url('https://fonts.cdnfonts.com/css/avenir');
 
@@ -17,3 +20,18 @@ line-height: 62.5%;
 text-align: center;
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.point{
+    cursor: pointer;
+}
+
+.course-filter .mat-dialog-container{
+    position: fixed;
+    top:5%;
+    height: fit-content;
+    left:25%;
+    width: 50%;
+}
+
+.color{
+    color:rgba(255,255,255,0.3);
+}

@@ -1,0 +1,222 @@
+.header-body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5% 10%;
+    background-color: #092963;
+    width: 100%;
+    position: relative;
+}
+
+.header-part,.profile-notification{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notification{
+    /* display: none; */
+    justify-content: flex-end;
+    gap: 20%;
+}
+.profile{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.profile-image{
+    object-fit: cover;
+    width: 3em;
+    border-radius: 50%;
+    
+}
+.search-part-div{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3%;
+}
+.filter{
+    display: none;
+    background-color: #EE5C4D;
+    border-radius: 40px;
+    padding: 0.51% 2%;
+}
+
+
+
+.search{
+   width: 90%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #123779;
+    border-radius: 50px;
+    padding: 0.5%;
+}
+.search-icon{
+    width: 10%;
+    font-size: 2rem;
+    color:#fff;
+    cursor: pointer;
+}
+.search input{
+    
+    width: 90%;
+    background-color: transparent;
+    border: none;
+    font-family: Proxima Nova Soft;
+font-weight: Bold;
+font-size: 1.6rem;
+line-height: 2rem;
+color: #fff;
+}
+.close{
+    display: none;
+}
+
+.search input::placeholder{
+    color:rgba(255,255,255,0.3);
+}
+.search input:focus{
+    outline: none;
+}
+.dropdown{
+    opacity: 0;
+    position: absolute;
+    width: 10%;
+    top:6%;
+    right: 1.3%;
+}
+.option{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+    width: 90%;
+    margin: auto;
+    
+    
+}
+.option p{
+   margin:0;
+   padding: 5% 1%;
+}
+.border{
+    border-bottom: 1px solid 
+    rgba(4, 44, 92, 0.1);
+   
+}
+.click-setting{
+    opacity: 1;
+}
+
+
+
+
+/* Search styling */
+
+
+.search-part{
+    
+    display: none;
+    
+    width: 40vw;
+    /* background-color: wheat; */
+    margin-left: 30%;
+    padding: 1%;
+    text-align: left;
+    
+}
+.search-ok{
+    display: block;
+}
+.flexReverse{
+flex-direction: row-reverse;
+
+}
+.search-head{
+    color:#fff;
+    font-size: 1.8rem;
+   
+    line-height: 2.5rem;
+    font-weight: bold;
+    font-family: Proxima Nova Soft;
+}
+.top-search-button{
+    width: fit-content;
+    padding: 0% 2%;
+    margin-bottom: 4%;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family:Proxima Nova Soft;
+    
+
+}
+.button-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+.gap{
+    gap:2%
+}
+
+.search-category{
+    margin-bottom: 4%;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.search-data{
+    height: 40vh;
+    overflow-y: scroll;
+}
+.search-data::-webkit-scrollbar{
+    display: none;
+}
+.search-datas{
+    width:50%;
+   
+    margin-left: 30%;
+    padding: 1%;
+    text-align: left;
+}
+
+/* Course details */
+.course-image{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5%;
+}
+.courseDetails p{
+    margin: 0;
+    margin-bottom: 1%;
+}
+.course-button{
+    background-color: #fff;
+    color: #000;
+    border-radius: 6px;
+    padding: 1% 3%;
+}
+.courseName{
+    font-family:Proxima Nova Soft;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 2.6rem;
+    font-weight: bold;
+}
+.chapterCount{
+    color:rgba(255,255,255,0.3);
+    font-size: 1.2rem;
+    line-height: 2.6rem;
+}
+.courseImage{
+    border-radius: 6%;
+}
+
+
+
