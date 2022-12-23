@@ -10,108 +10,100 @@
     </div>
     <div class="top-search">
         <p class="search-head">Search from Categories</p>
-        <div class="button-list">
-          <img
-            src="../../assets/images/Group 3130.png"
-            alt=""
-            class="search-category point "
+        <div class="button-list gap">
         
-          />
-          <img
-            src="../../assets/images/Group 3129.png"
-            alt=""
-            class="search-category point"
-        
-          />
-          <img
-            src="../../assets/images/Group 3131.png"
-            alt=""
-            class="search-category point"
-            
-          />
-          <img
-            src="../../assets/images/Group 3132.png"
-            alt=""
-            class="search-category point"
-       
-          />
-          <img
-            src="../../assets/images/Group 3133.png"
-            alt=""
-            class="search-category point"
-          
-          />
-          <img
-            src="../../assets/images/Group 3134.png"
-            alt=""
-            class="search-category point"
-           
-          />
-          <img
-            src="../../assets/images/Group 3135.png"
-            alt=""
-            class="search-category point"
-            
-          />
-          <img
-            src="../../assets/images/Group 3136.png"
-            alt=""
-            class="search-category point"
-          
-          />
-          <img
-            src="../../assets/images/Group 3137.png"
-            alt=""
-            class="search-category point"
-        
-          />
-          <img
-            src="../../assets/images/Group 3138.png"
-            alt=""
-            class="search-category point"
-           
-          />
-          <img
-            src="../../assets/images/Group 3139.png"
-            alt=""
-            class="search-category point"
-            
-          />
+          <div class="search-category point" (click)="selectCourse('Design')" [class.backgroundColor]="course == 'Design'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+            </span>
+            Design
+          </div>
+          <div class="search-category point" (click)="selectCourse('Development')" [class.backgroundColor]="course == 'Development'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
+            </span>
+            Development
+          </div>
+          <div class="search-category point" (click)="selectCourse('Business')" [class.backgroundColor]="course == 'Business'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
+            </span>
+            Business
+          </div>
+          <div class="search-category point" (click)="selectCourse('Finance')" [class.backgroundColor]="course == 'Finance'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
+            </span>
+            Finance
+          </div>
+          <div class="search-category point" (click)="selectCourse('Health & Fitness')" [class.backgroundColor]="course == 'Health & Fitness'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
+            </span>
+           Health&nbsp;&&nbsp;Fitness
+          </div>
+          <div class="search-category point" (click)="selectCourse('Music')" [class.backgroundColor]="course == 'Music'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
+            </span>
+            Music
+          </div>
+          <div class="search-category point" (click)="selectCourse('IT & Software')" [class.backgroundColor]="course == 'IT & Software'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
+            </span>
+            IT&nbsp;&&nbsp;Software
+          </div>
+          <div class="search-category point" (click)="selectCourse('Marketing')" [class.backgroundColor]="course == 'Marketing'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
+            </span>
+            Marketing
+          </div>
+          <div class="search-category point" (click)="selectCourse('Lifestyle')" [class.backgroundColor]="course == 'Lifestyle'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
+            </span>
+            Lifestyle
+          </div>
+          <div class="search-category point" (click)="selectCourse('Photography')" [class.backgroundColor]="course == 'Photography'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
+            </span>
+            Photography
+          </div>
+          <div class="search-category point" (click)="selectCourse('Teaching')" [class.backgroundColor]="course == 'Teaching'">
+            <span class="image-div">
+              <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
+            </span>
+            Teaching
+          </div>
+         
         </div>
       </div>
       <div class="top-search margin-top">
           <p class="search-head">Duration</p>
-          <div class="button-list width">
-            <img
-              src="../../assets/images/Group 3140.png"
-              alt=""
-              class="search-category point "
-          
-            />
-            <img
-              src="../../assets/images/Group 3141.png"
-              alt=""
-              class="search-category point"
-          
-            />
-            <img
-              src="../../assets/images/Group 3142.png"
-              alt=""
-              class="search-category point"
-              
-            />
-            <img
-              src="../../assets/images/Group 3143.png"
-              alt=""
-              class="search-category point"
-         
-            />
-            <img
-              src="../../assets/images/Group 3144.png"
-              alt=""
-              class="search-category point"
-            
-            />
+          <div class="button-list">
+            <div class="search-category point padding" (click)="selectDuration('5/10 Chapters')" [class.backgroundColor]="duration == '5/10 Chapters'">
+             
+              5/10 Chapters
+            </div>
+            <div class="search-category point padding" (click)="selectDuration('10/20 Chapters')" [class.backgroundColor]="duration == '10/20 Chapters'">
+             
+              10/20 Chapters
+            </div>
+            <div class="search-category point padding" (click)="selectDuration('20/30 Chapters')" [class.backgroundColor]="duration == '20/30 Chapters'">
+             
+              20/30 Chapters
+            </div>
+            <div class="search-category point padding" (click)="selectDuration('30/40 Chapters')" [class.backgroundColor]="duration == '30/40 Chapters'">
+             
+              30/40 Chapters
+            </div>
+            <div class="search-category point padding" (click)="selectDuration('50+ Chapters')" [class.backgroundColor]="duration == '50+ Chapters'">
+             
+              50+ Chapters
+            </div>
            
             
           </div>
@@ -119,6 +111,6 @@
 
       <div class="filter-submit">
         <button mat-raised-button class="filter">Apply Filter</button>
-        <button mat-raised-button>Clear All</button>
+        <button mat-raised-button (click)="clearSelectData()">Clear All</button>
       </div>
 </div>

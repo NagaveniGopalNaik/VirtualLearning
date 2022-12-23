@@ -145,7 +145,7 @@ flex-direction: row-reverse;
     font-weight: bold;
     font-family: Proxima Nova Soft;
 }
-.top-search-button{
+.top-search-button,.search-category{
     width: fit-content;
     padding: 0% 2%;
     margin-bottom: 4%;
@@ -165,9 +165,16 @@ flex-direction: row-reverse;
 }
 
 .search-category{
-    margin-bottom: 4%;
+   height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 5%;
+    padding: 0 2%;
     background-color: white;
     border-radius: 6px;
+    margin-bottom: 4%;
 }
 
 .search-data{
@@ -216,6 +223,95 @@ flex-direction: row-reverse;
 }
 .courseImage{
     border-radius: 6%;
+}
+
+.no-data{
+    font-family: Proxima Nova Soft;
+    font-size: 2.6rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+}
+.sub-no-data{
+    font-family: Proxima Nova Soft;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color:rgba(255,255,255,0.5);
+    line-height: 2.6rem;
+
+}
+.mobile-screen-header{
+    display: none;
+}
+
+@media(max-width:700px){
+    .header-body{
+        display: none;
+    }
+    .mobile-screen-header{
+        display: block;
+    
+        /* width: 90vw; */
+        /* padding: 5%; */
+        display: flex;
+        justify-content: space-between;
+    }
+    .search-icon{
+        font-size: 2rem;
+        color:black;
+        margin: 10% 5% 0 0;
+        
+    }
+    .image{
+        margin: 10% 0 0 5%;
+    }
+    .mobile-menu{
+        
+    position: fixed;
+    width: 100%;
+    background-color:rgba(0,0,0,0.09);
+    top: 0;
+    height: 100vh;
+    background-color: #fff;
+    padding: 5%;
+    right: 0;
+    animation-name: slide;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+    
+    
+
+    }
+    
+    @keyframes slide {
+        from {
+          transform: translateX(200px);
+        }
+        to {
+          transform: translateX(50px);
+          opacity: 1;
+        }
+      }
+
+      .backgroundColor{
+        background-color: #FCBE4B;
+    }
+
+    .top-search{
+        width: 100vw;
+    }
+    .searchBar{
+        width: 100vw;
+        display: flex;
+        border: 1px solid red;
+        justify-content: space-around;
+    }
+    
 }
 
 

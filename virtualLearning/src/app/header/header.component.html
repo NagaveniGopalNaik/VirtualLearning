@@ -52,91 +52,97 @@
       <mat-icon class="color" (click)="closeSearch()">close</mat-icon>
     </div>
   </div>
-  <div class="search-part" [class.search-ok]="searchOk == true" *ngIf="searchOption == true">
+  <div class="search-part" [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
     <div class="top-search">
       <p class="search-head">Top Search</p>
       <div class="button-list">
-        <button mat-raised-button class="top-search-button">Java</button>
-        <button mat-raised-button class="top-search-button">Angular</button>
-        <button mat-raised-button class="top-search-button">JavaScript</button>
-        <button mat-raised-button class="top-search-button">Designing</button>
-        <button mat-raised-button class="top-search-button">
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Java')">Java</button>
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Angular')">Angular</button>
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('JavaScript')">JavaScript</button>
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Designing')">Designing</button>
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Data analyst')">
           Data analyst
         </button>
-        <button mat-raised-button class="top-search-button">
+        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Backend course')">
           Backend course
         </button>
       </div>
     </div>
+    <div class="top-search" *ngIf="false">
+      <p class="no-data">No matching course</p>
+      <p class="sub-no-data">Try a different search or browse categories</p>
+    </div>
     <div class="top-search">
       <p class="search-head">Search from Categories</p>
       <div class="button-list gap">
-        <img
-          src="../../assets/images/Group_3130.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Design')"
-        />
-        <img
-          src="../../assets/images/Group_3129.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Development')"
-        />
-        <img
-          src="../../assets/images/Group_3131.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Business')"
-        />
-        <img
-          src="../../assets/images/Group_3132.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Finance')"
-        />
-        <img
-          src="../../assets/images/Group_3133.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Health & Fitness')"
-        />
-        <img
-          src="../../assets/images/Group_3134.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Music')"
-        />
-        <img
-          src="../../assets/images/Group_3135.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('It & Software')"
-        />
-        <img
-          src="../../assets/images/Group_3136.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Marketing')"
-        />
-        <img
-          src="../../assets/images/Group_3137.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('LifeStyle')"
-        />
-        <img
-          src="../../assets/images/Group_3138.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Photography')"
-        />
-        <img
-          src="../../assets/images/Group_3139.png"
-          alt=""
-          class="search-category point"
-          (click)="searchCatogary('Teaching')"
-        />
+        
+        <div class="search-category point" (click)="searchCatogary('Design')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+          </span>
+          Design
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Development')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
+          </span>
+          Development
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Business')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
+          </span>
+          Business
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Finance')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
+          </span>
+          Finance
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Health & Fitness')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
+          </span>
+         Health&nbsp;&&nbsp;Fitness
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Music')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
+          </span>
+          Music
+        </div>
+        <div class="search-category point" (click)="searchCatogary('IT & Software')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
+          </span>
+          IT&nbsp;&&nbsp;Software
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Marketing')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
+          </span>
+          Marketing
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Lifestyle')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
+          </span>
+          Lifestyle
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Photography')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
+          </span>
+          Photography
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Teaching')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
+          </span>
+          Teaching
+        </div>
+       
       </div>
     </div>
   </div>
@@ -144,7 +150,7 @@
   <div class="search-datas">
       <div class="image-details">
           <div class="course-image">
-              <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+              <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
        <div class="courseDetails">
            <p class="courseName">Digital Marketing for 2021 Masterclass</p>
            <p class="chapterCount">14 Chapter</p>
@@ -156,7 +162,7 @@
   <div class="search-datas">
     <div class="image-details">
         <div class="course-image">
-            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
      <div class="courseDetails">
          <p class="courseName">Digital Marketing for 2021 Masterclass</p>
          <p class="chapterCount">14 Chapter</p>
@@ -168,7 +174,7 @@
 <div class="search-datas">
     <div class="image-details">
         <div class="course-image">
-            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
      <div class="courseDetails">
          <p class="courseName">Digital Marketing for 2021 Masterclass</p>
          <p class="chapterCount">14 Chapter</p>
@@ -180,7 +186,7 @@
 <div class="search-datas">
     <div class="image-details">
         <div class="course-image">
-            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
      <div class="courseDetails">
          <p class="courseName">Digital Marketing for 2021 Masterclass</p>
          <p class="chapterCount">14 Chapter</p>
@@ -192,7 +198,7 @@
 <div class="search-datas">
     <div class="image-details">
         <div class="course-image">
-            <img [src]="image" alt="" width="15%" height="15%" class="courseImage">
+            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
      <div class="courseDetails">
          <p class="courseName">Digital Marketing for 2021 Masterclass</p>
          <p class="chapterCount">14 Chapter</p>
@@ -217,3 +223,112 @@
     <p class="point">Logout</p>
   </div>
 </mat-card>
+
+<div class="mobile-screen-header">
+  <img src="../../assets/images/icn_hamburgermenu@1.5x.svg" alt="" class="image" (click)="gotoMenu()">
+  <mat-icon class="search-icon" (click)="gotoSearch()">search</mat-icon>
+</div>
+<div class="mobile-menu" *ngIf="search_view == true" (click)="closeMenu()">
+ 
+  <div class="search-part " [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
+    <mat-icon class="point" (click)="closeSearchs()">arrow_back</mat-icon>
+    <div class="searchBar">
+      
+      <p class="search-text">Search</p>
+    </div>
+    <div class="top-search">
+      <p class="search-head">Top Search</p>
+      <div class="button-list">
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Java')">Java</button>
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Angular')">Angular</button>
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('JavaScript')">JavaScript</button>
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Designing')">Designing</button>
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Data analyst')">
+          Data analyst
+        </button>
+        <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Backend course')">
+          Backend course
+        </button>
+      </div>
+    </div>
+    <div class="top-search" *ngIf="false">
+      <p class="no-data">No matching course</p>
+      <p class="sub-no-data">Try a different search or browse categories</p>
+    </div>
+    <div class="top-search">
+      <p class="search-head">Search from Categories</p>
+      <div class="button-list gap">
+        
+        <div class="search-category point" (click)="searchCatogary('Design')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+          </span>
+          Design
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Development')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
+          </span>
+          Development
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Business')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
+          </span>
+          Business
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Finance')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
+          </span>
+          Finance
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Health & Fitness')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
+          </span>
+         Health&nbsp;&&nbsp;Fitness
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Music')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
+          </span>
+          Music
+        </div>
+        <div class="search-category point" (click)="searchCatogary('IT & Software')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
+          </span>
+          IT&nbsp;&&nbsp;Software
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Marketing')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
+          </span>
+          Marketing
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Lifestyle')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
+          </span>
+          Lifestyle
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Photography')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
+          </span>
+          Photography
+        </div>
+        <div class="search-category point" (click)="searchCatogary('Teaching')">
+          <span class="image-div">
+            <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
+          </span>
+          Teaching
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+ 
+</div>

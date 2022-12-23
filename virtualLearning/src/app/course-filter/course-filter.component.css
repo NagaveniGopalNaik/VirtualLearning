@@ -40,11 +40,29 @@
     flex-wrap: wrap;
     gap: 2%;
 }
+.top-search-button,.search-category{
+    width: fit-content;
+    padding: 0% 2%;
+    margin-bottom: 4%;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family:Proxima Nova Soft;
+    
+
+}
+
 .search-category{
+   height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 5%;
+    padding: 0 2%;
+    background-color: white;
+    border-radius: 6px;
     margin-bottom: 4%;
     border: 1px solid #E4E4E4;
-    border-radius: 6px;
-    size: 50%;
 }
 .margin-top{
     margin-top: 1%;
@@ -52,6 +70,7 @@
 .width{
     width: 70%;
 }
+
 .filter-submit{
     width: 55%;
     margin: auto;
@@ -69,4 +88,12 @@
 }
 .active{
     border: 2px solid #FCBE4B;
+}
+
+.padding{
+    padding: 1% 4%;
+}
+
+.backgroundColor{
+    background-color: #FCBE4B;
 }

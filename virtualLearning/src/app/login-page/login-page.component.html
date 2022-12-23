@@ -36,11 +36,11 @@
            <form action="">
                <mat-form-field>
                    <mat-label>Username</mat-label>
-                   <input type="text" matInput>
+                   <input type="text" matInput [(ngModel)]="username" name="username">
                </mat-form-field>
                <mat-form-field>
-                   <mat-label>Enter your mobile number</mat-label>
-                   <input type="text" matInput>
+                   <mat-label>Enter Password</mat-label>
+                   <input type="password" matInput [(ngModel)]="password" name="password">
                   
                </mat-form-field>
                <div class="forgot">
@@ -48,7 +48,7 @@
                </div>
                
 
-               <button routerLink="/dashboard">Continue</button>
+               <button (click)="login()">Login</button>
            </form>
        </div>
        <p class="register-text">
