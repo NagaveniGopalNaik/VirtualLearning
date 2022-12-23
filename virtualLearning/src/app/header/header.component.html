@@ -228,13 +228,25 @@
   <img src="../../assets/images/icn_hamburgermenu@1.5x.svg" alt="" class="image" (click)="gotoMenu()">
   <mat-icon class="search-icon" (click)="gotoSearch()">search</mat-icon>
 </div>
-<div class="mobile-menu" *ngIf="search_view == true" (click)="closeMenu()">
+<div class="mobile-menu" *ngIf="search_view == true">
  
   <div class="search-part " [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
-    <mat-icon class="point" (click)="closeSearchs()">arrow_back</mat-icon>
+    
     <div class="searchBar">
-      
+      <mat-icon class="point back" (click)="closeSearchs()">arrow_back</mat-icon>
       <p class="search-text">Search</p>
+    </div>
+    <div class="searchbar">
+      <mat-icon class="search-icon" (click)="searchKey()">search</mat-icon>
+      <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
+      <!-- <input
+        type="text"
+        placeholder="Search"
+        (click)="searchCourse()"
+        [(ngModel)]="searchKeyData"
+        (keyup)="searchKey()"
+      /> -->
+      
     </div>
     <div class="top-search">
       <p class="search-head">Top Search</p>
@@ -259,67 +271,67 @@
       <p class="search-head">Search from Categories</p>
       <div class="button-list gap">
         
-        <div class="search-category point" (click)="searchCatogary('Design')">
+        <div class="search-category point border" (click)="searchCatogary('Design')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
           </span>
           Design
         </div>
-        <div class="search-category point" (click)="searchCatogary('Development')">
+        <div class="search-category point border" (click)="searchCatogary('Development')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
           </span>
           Development
         </div>
-        <div class="search-category point" (click)="searchCatogary('Business')">
+        <div class="search-category point border" (click)="searchCatogary('Business')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
           </span>
           Business
         </div>
-        <div class="search-category point" (click)="searchCatogary('Finance')">
+        <div class="search-category point border" (click)="searchCatogary('Finance')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
           </span>
           Finance
         </div>
-        <div class="search-category point" (click)="searchCatogary('Health & Fitness')">
+        <div class="search-category point border" (click)="searchCatogary('Health & Fitness')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
           </span>
          Health&nbsp;&&nbsp;Fitness
         </div>
-        <div class="search-category point" (click)="searchCatogary('Music')">
+        <div class="search-category point border" (click)="searchCatogary('Music')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
           </span>
           Music
         </div>
-        <div class="search-category point" (click)="searchCatogary('IT & Software')">
+        <div class="search-category point border" (click)="searchCatogary('IT & Software')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
           </span>
           IT&nbsp;&&nbsp;Software
         </div>
-        <div class="search-category point" (click)="searchCatogary('Marketing')">
+        <div class="search-category point border" (click)="searchCatogary('Marketing')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
           </span>
           Marketing
         </div>
-        <div class="search-category point" (click)="searchCatogary('Lifestyle')">
+        <div class="search-category point border" (click)="searchCatogary('Lifestyle')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
           </span>
           Lifestyle
         </div>
-        <div class="search-category point" (click)="searchCatogary('Photography')">
+        <div class="search-category point border" (click)="searchCatogary('Photography')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
           </span>
           Photography
         </div>
-        <div class="search-category point" (click)="searchCatogary('Teaching')">
+        <div class="search-category point border" (click)="searchCatogary('Teaching')">
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
           </span>
