@@ -140,7 +140,7 @@ flex-direction: row-reverse;
 .search-head{
     color:#fff;
     font-size: 1.8rem;
-   
+   margin-left: 5%;
     line-height: 2.5rem;
     font-weight: bold;
     font-family: Proxima Nova Soft;
@@ -159,6 +159,8 @@ flex-direction: row-reverse;
     display: flex;
     flex-wrap: wrap;
     gap: 5%;
+    width: 90%;
+    margin: auto;
 }
 .gap{
     gap:2%
@@ -251,6 +253,10 @@ flex-direction: row-reverse;
     .header-body{
         display: none;
     }
+    .search-head{
+        color:#000;
+    }
+  
     .mobile-screen-header{
         display: block;
     
@@ -271,13 +277,14 @@ flex-direction: row-reverse;
         margin: 10% 0 0 5%;
     }
     .mobile-menu{
-        
+        height: 100px;
     position: fixed;
-    width: 90vw;
+    /* width: 90vw; */
+    
     margin-right: 5%;
-    background-color:rgba(0,0,0,0.09);
+    /* background-color:rgba(0,0,0,0.09); */
     top: 0;
-    height: 100vh;
+    height: fit-content;
     background-color: #fff;
     padding: 5%;
     right: 0;
@@ -307,13 +314,24 @@ flex-direction: row-reverse;
 
     .top-search{
         width: 100vw;
+        
+        
+    }
+    .searchBar1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: auto;
     }
     .searchBar{
-        width: 100%;
+        width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        margin: auto;
+        margin-top: 5%;
      
     }
     .border{
@@ -338,14 +356,45 @@ flex-direction: row-reverse;
     }
 
     .searchbar{
-        height: fit-content;
-        width: 100%;
+        /* height: fit-content; */
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         gap:5%;
         border: 1px solid black;
+        padding: 1% 0%;
+        border-radius: 6px;
+        
     }
+    .searchbar input{
+        border: none;
+        width: 70%;
+        
+    }
+    .searchbar input:focus{
+        outline: none;
+    }
+    .search-ok{
+        width: fit-content;
+        border-radius: 6px;
+        
+    }
+    .search-filter{
+        display: flex;
+        /* width: 100%; */
+        width: 90%;
+        margin: auto;
+        margin-bottom: 5%;
+        justify-content: flex-start;
+        gap:2%;
+        align-items: center;
+        
+    }
+    .color{
+        color:black;
+    }
+   
     
 }
 

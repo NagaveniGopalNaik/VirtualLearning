@@ -230,23 +230,31 @@
 </div>
 <div class="mobile-menu" *ngIf="search_view == true">
  
-  <div class="search-part " [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
+  <div class="search-part " [class.search-ok]="searchOk == true" [class.mobile-menu]="search_view == true">
     
     <div class="searchBar">
       <mat-icon class="point back" (click)="closeSearchs()">arrow_back</mat-icon>
       <p class="search-text">Search</p>
     </div>
-    <div class="searchbar">
-      <mat-icon class="search-icon" (click)="searchKey()">search</mat-icon>
-      <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
-      <!-- <input
-        type="text"
-        placeholder="Search"
-        (click)="searchCourse()"
-        [(ngModel)]="searchKeyData"
-        (keyup)="searchKey()"
-      /> -->
-      
+    <div class="search-filter">
+      <div class="searchbar">
+        <mat-icon class="search-icon1">search</mat-icon>
+        <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
+        <input
+          type="text"
+          placeholder="Search"
+          (click)="searchCourse()"
+          [(ngModel)]="searchKeyData"
+          (keyup)="searchKey()"
+        />
+        
+      </div>
+      <div class="filter point search-ok" (click)="filter_course()">
+          <img
+            src="../../assets/images/Mask_Group_9 Clipped.png"
+            alt=""
+            
+      /></div>
     </div>
     <div class="top-search">
       <p class="search-head">Top Search</p>
