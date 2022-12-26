@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 /* biko font family */
 @import url(//db.onlinewebfonts.com/c/e5d18e657f83f8750cd54c899de3a38b?family=Biko);
-
+@font-face {
+    font-family: Biko;
+    src: url('./assets/Fonts/Biko_Regular.otf');
+}
 
 /* Proxima nova soft */
 
@@ -14,10 +17,16 @@
 
 
 html, body {  
-width: 100%;
+    overflow-x: hidden;
+overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+  top: 0;
+  left: 0;
 font-size: 62.5%;
 line-height: 62.5%;
 text-align: center;
+
 }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .point{
@@ -27,19 +36,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .course-filter .mat-dialog-container{
     position: fixed;
     top:5%;
-    height: fit-content;
     left:25%;
     width: 50%;
+    height: fit-content;
 }
 
 .color{
     color:rgba(255,255,255,0.3);
 }
+.mat-vertical-stepper{
+    background-color: red;
+}
+
 @media(max-width:700px){
     .course-filter .mat-dialog-container{
         position: fixed;
         top:30%;
-        height: 100vh;
         left:0%;
         width: 100%;
     }

@@ -1,0 +1,273 @@
+.course-details-container{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5% 10%;
+    text-align: left;
+    
+}
+.nav-roots{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5%;
+}
+
+.nav-root{
+    font-family: Biko;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #7A7A7A;
+    font-weight: 200;
+    padding: 0.5% 0;
+    
+}
+.nav-root-highlight{
+    color:#2BB5F4;
+}
+.increase-icon-size{
+    font-size: 2.4rem;
+    /* line-height: 3.8rem; */
+    
+   
+    
+}
+.course-details-body, .course-name-category{
+    width: 100%;
+   
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    
+}
+.video-part{
+    width: 65%;
+    position: relative;
+    font-family: Proxima Nova Soft;
+}
+.details-part{
+    width: 30%;
+    position: relative;
+    min-height: 100vh;
+    
+    
+}
+.vidio-size{
+    /* object-fit: cover; */
+    width: 100%;
+    height: 30vw;
+    /* max-height: 50vh; */
+    object-fit:fill;
+    border-radius: 6px;
+}
+
+.course-name{
+    color:#fff;
+    position: absolute;
+    top:8%;
+    left: 5%;
+    z-index: 1;
+    font-family: Proxima Nova Soft;
+font-weight:bold;
+font-size: 2rem;
+line-height: 2.4rem;
+}
+.video-play{
+    position: relative;
+    
+}
+
+.course-name-duration{
+    position: absolute;
+   bottom: 10%;
+    width: 90%;
+    color: #fff;
+    z-index: 1;
+    padding: 0 5%;
+    
+   background-image:linear-gradient(to right,rgba(0,0,0,0.83),rgba(255,255,255,0.1));
+
+}
+.chap-name,.duration-chap{
+    font-family: Proxima Nova Soft;
+    font-size: 1.6rem;
+    font-weight: 300;
+    
+}
+.chap-name{
+    padding-top: 2%;
+}
+.duration-chap{
+    font-size: 1.2rem;
+}
+.play-button{
+    position: absolute;
+    width: 10%;
+    top: 30%;
+    left: 45%;
+}
+
+.course-name-category{
+    margin-top: 2%;
+}
+.name{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+.dur{
+    font-size: 1.2rem;
+    color:#111111;
+    
+}
+.category{
+    border-radius: 6px;
+    background-color: #FCBE4B ;
+    height: fit-content;
+    font-size: 1.2rem;
+    padding: 0 1%;
+    font-weight: bold;
+}
+.line{
+    color: #F0F0F0;
+    opacity: 0.2;
+}
+.show-more{
+    color: red;
+    cursor: pointer;
+}
+.black-color{
+    color:#000;
+    opacity: 0.75;
+    font-weight: 100;
+    
+}
+
+/* Course details part */
+.overview-chapters{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    width: max-content;
+}
+.overview-chapters p{
+    padding: 3% 10% 0 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    color: #7A7A7A;
+    font-size: 1.4rem;
+
+    
+}
+
+.details-active{
+    border-bottom: 1px solid #EC5D52 !important;
+    color: #EC5D52 !important;
+    /* background-color: red; */
+    
+}
+.course-d-head p{
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Proxima Nova Soft;
+}
+
+.icon,.images{
+    object-fit: cover;
+    
+}
+.image,.image1{
+   width: 1em;
+   height: 1em;
+    padding:1%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.image{
+    background-color: #2BB5F4;
+}
+.course-includes,.instructor-details{
+    display: flex;
+    gap:5%;
+    
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2%;
+}
+.margin{
+    margin: 0;
+}
+.margin-top{
+    margin-top: 7%;
+}
+.will-learn{
+    display: flex;
+    gap: 5%;
+}
+ul{
+    padding-left: 5%;
+}
+.instructor-details{
+    gap: 0;
+}
+
+.join-course{
+    width: 100%;
+    background-color: #EC5D52;
+    text-align: center;
+    color: #fff;
+    padding: 4% 0;
+    font-family: Proxima Nova Soft;
+    font-size: 2rem;
+    font-weight: 400;
+    
+}
+.font-size{
+    font-size: 1.4rem;
+    font-family: Proxima Nova Soft;
+}
+.black{
+    color:#000;
+}
+
+/* Chapter part */
+.matIcon{
+    color: #EC5D52;
+}
+.chapters,.sub-chapter{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.sub-chapter{
+    
+    justify-content: flex-start;
+    gap: 2%;
+}
+.chapter-name{
+    font-family: Proxima Nova Soft;
+    font-size: 1.8rem;
+    line-height: 4.4rem;
+    margin: 0;
+}
+.font{
+    font-size: 1.6rem;
+}
+.button{
+    border: none;
+    border-radius: 50%;
+    
+}
+.icon-button{
+    object-fit: cover;
+}
+
+
+
+
+

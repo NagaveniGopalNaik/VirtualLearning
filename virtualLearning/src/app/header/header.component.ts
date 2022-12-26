@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { CourseFilterComponent } from '../course-filter/course-filter.component';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 @Component({
@@ -16,7 +17,7 @@ searchCancel=false;
 mobile_menu=false;
 search_view=false;
 image = "../../assets/images/illustration-in-UI.png";
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -54,7 +55,11 @@ clearData(){
 }
 
 filter_course(){
-this.dialog.open(CourseFilterComponent,{panelClass:'course-filter'});
+  let dialogRef=this.dialog.open(CourseFilterComponent,{panelClass:'course-filter'});
+  // dialogRef.afterClosed();
+  //   this.searchOption = true;
+  // this.searchCancel = false;
+  
 }
 
 gotoMenu(){
@@ -69,5 +74,10 @@ closeMenu(){
 }
 closeSearchs(){
   this.search_view = false;
+}
+
+gotoCourseDetails(){
+  this.closeSearch();
+  this.router.navigate(['/course-details']);
 }
 }

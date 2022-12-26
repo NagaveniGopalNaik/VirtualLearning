@@ -1,0 +1,165 @@
+<app-header></app-header>
+<div class="course-details-container">
+<div class="nav-roots">
+    <p class="nav-root nav-root-highlight">My course</p>
+<p class="nav-root nav-root-highlight increase-icon-size"> > </p>
+<p class="nav-root">Ongoing</p>
+</div>
+<div class="course-details-body">
+    <div class="video-part">
+<div class="video-play point" (click)="playVideo()"  >
+    <p class="course-name">Preview the course</p>
+    <img src="../../assets/images/Yellow Play.svg" alt="play button" class="play-button point" *ngIf="display_name==true">
+    <video src="../../assets/pexels-polina-kovaleva-8035714.mp4" class="vidio-size" controls type="video/mp3" width="80%" height="30%"></video>
+<div class="course-name-duration" *ngIf="display_name==true">
+    <p class="chap-name">Introduction</p>
+    <p class="duration-chap" *ngIf="course_details_active == true">3 min</p>
+</div>
+</div>
+<div class="course-name-category">
+    <div class="name-dur">
+        <p class="name">Learn Figma - UI/UX Design Essential Training</p>
+    
+    </div>
+    <div class="category">
+        Design
+    </div>
+</div>
+<p class="dur">7 Chapter | 46 lessons</p>
+<hr class="line" *ngIf="course_details_active == true">
+<p class="nav-root nav-root-highlight font-size" *ngIf="course_details_active == true">
+    Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach. Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach.
+</p>
+<p class="nav-root black-color font-size" *ngIf="course_details_active == true">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes. Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs <span class="show-more">Show more</span></p>
+    </div>
+    <mat-card class="details-part">
+      <div class="overview-chapters">
+          <p [class.details-active]="course_details_active == true" (click)="courseDetailsOverview()">Overview</p>
+          <p [class.details-active]="course_details_active == false" (click)="courseDetailsChapter()">Chapters</p>
+      </div>
+      <div class="overview-part" *ngIf="course_details_active == true">
+   
+             <p class="course-d-head">Course&nbsp;Includes</p>
+         <div class="course-includes">
+             <div class="image">
+                 <img src="../../assets/images/overview/Shape (3).png" alt="" class="icon" width="80%">
+             </div>
+            
+                <p class="nav-root margin font-size">3.5 total hours video</p>
+             
+         </div>
+         <div class="course-includes">
+            <div class="image">
+                <img src="../../assets/images/overview/Shape (1).svg" alt="" class="icon" width="80%">
+            </div>
+           
+               <p class="nav-root margin font-size">Support Files</p>
+            
+        </div>
+        <div class="course-includes">
+            <div class="image">
+                <img src="../../assets/images/overview/Shape (2).svg" alt="" class="icon" width="80%">
+            </div>
+           
+               <p class="nav-root margin font-size">6 Module Test</p>
+            
+        </div>
+        <div class="course-includes">
+            <div class="image">
+                <img src="../../assets/images/overview/Shape (1).png" alt="" class="icon" width="80%">
+            </div>
+           
+               <p class="nav-root margin font-size">Full lifetime access</p>
+            
+        </div>
+        <div class="course-includes">
+            <div class="image">
+                <img src="../../assets/images/overview/Shape (2).png" alt="" class="icon" width="80%">
+            </div>
+           
+               <p class="nav-root margin font-size">Access on mobile, desktop and tv</p>
+            
+        </div>
+        <div class="course-includes">
+            <div class="image">
+                <img src="../../assets/images/overview/Shape (1).svg" alt="" class="icon" width="80%">
+            </div>
+           
+               <p class="nav-root margin font-size">Certificate of Completion</p>
+            
+        </div>
+        <p class="course-d-head margin-top">What you’ll learn</p>
+      <div class="will-learn">
+          <div class="image1">
+            <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
+          </div>
+          <p class="nav-root black-color margin">Design Websites</p>
+      </div>
+      <div class="will-learn">
+        <div class="image1">
+          <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
+        </div>
+        <p class="nav-root black-color margin font-size">You will have a fully interactive design and prototype at the end of this course</p>
+    </div>
+    <div class="will-learn">
+        <div class="image1">
+          <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
+        </div>
+        <p class="nav-root black-color margin font-size">Design mobile and desktop apps</p>
+    </div>
+    <div class="will-learn">
+        <div class="image1">
+          <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
+        </div>
+        <p class="nav-root black-color margin font-size">You will learn how to reuse design elements for future projects</p>
+    </div>
+        <p class="course-d-head margin-top">Requirements</p>
+        <ul>
+            <li class="nav-root black-color font-size">Internet Access </li>
+            <li class="nav-root black-color font-size">You should know your way around comouter basics</li>
+        </ul>
+        <p class="course-d-head margin-top">Instructor</p>
+        <div class="instructor-details">
+            <div class="instructor-image">
+                <img src="../../assets/images/img_instructor1 copy@3x 1.png" alt="" width="80%" height="80%">
+            </div>
+            <div class="name-professional">
+                <p class="course-d-head margin">Dean Mathew</p>
+                <p class="nav-root black-color font-size">User interface teacher www.appledesigntips.com</p>
+            </div>
+        </div>
+        <p class="nav-root black-color font-size">
+            Back in 2010, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high profile web and iPhone applications. The applications range from 3D medical aided web applications to project management applications for niche industries. 
+
+I am also the founder of a large local design organization, Salt Lake Designers, where I and other local influencers help cultivate the talents of up and coming UX designers through workshops and panel discussions <span class="show-more">Show more</span>
+        </p>
+
+
+      </div>
+      <div class="chapters-part" *ngIf="course_details_active == false">
+          <p class="course-d-head margin-top font">Course Content</p>
+          <p class="nav-root black font-size">
+            7 Chapter | 46 lessons | 6 Assignment Test | 3.5h
+            total length
+          </p>
+          <div class="chapters">
+              <p class="chapter-name">Chapter 1 - Introduction to the course</p>
+              <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
+              <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+            </div>
+         
+        <div class="chapter-data" *ngIf="display_sub_chapter == true">
+           <div class="stepper">
+               <div class="sub-course">
+                   <div class="select-icon">add</div>
+                   
+               </div>
+           </div>
+        </div>
+      </div>
+      <div class="join-course">
+          <p class="margin point">Join Course</p>
+      </div>
+    </mat-card>
+</div>
+</div>

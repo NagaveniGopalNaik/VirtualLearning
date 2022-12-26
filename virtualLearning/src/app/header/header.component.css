@@ -20,7 +20,7 @@
 }
 .profile{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     
 }
 
@@ -124,7 +124,8 @@ color: #fff;
     display: none;
     
     width: 40vw;
-    /* background-color: wheat; */
+    
+    
     margin-left: 30%;
     padding: 1%;
     text-align: left;
@@ -167,7 +168,8 @@ flex-direction: row-reverse;
 }
 
 .search-category{
-   height: fit-content;
+   /* height: fit-content;
+    */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -180,7 +182,7 @@ flex-direction: row-reverse;
 }
 
 .search-data{
-    height: 40vh;
+  
     overflow-y: scroll;
 }
 .search-data::-webkit-scrollbar{
@@ -192,6 +194,7 @@ flex-direction: row-reverse;
     margin-left: 30%;
     padding: 1%;
     text-align: left;
+    cursor: pointer;
 }
 
 /* Course details */
@@ -277,14 +280,14 @@ flex-direction: row-reverse;
         margin: 10% 0 0 5%;
     }
     .mobile-menu{
-        height: 100px;
+        /* height: 100px; */
     position: fixed;
     /* width: 90vw; */
     
     margin-right: 5%;
     /* background-color:rgba(0,0,0,0.09); */
     top: 0;
-    height: fit-content;
+    /* height: fit-content; */
     background-color: #fff;
     padding: 5%;
     right: 0;
@@ -317,13 +320,13 @@ flex-direction: row-reverse;
         
         
     }
-    .searchBar1{
+    /* .searchBar1{
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 80%;
         margin: auto;
-    }
+    } */
     .searchBar{
         width: 90%;
         display: flex;
@@ -332,6 +335,7 @@ flex-direction: row-reverse;
         position: relative;
         margin: auto;
         margin-top: 5%;
+        
      
     }
     .border{
@@ -366,6 +370,7 @@ flex-direction: row-reverse;
         padding: 1% 0%;
         border-radius: 6px;
         
+        
     }
     .searchbar input{
         border: none;
@@ -393,6 +398,10 @@ flex-direction: row-reverse;
     }
     .color{
         color:black;
+    }
+    .search-part{
+       
+        min-height: 100vh;
     }
    
     

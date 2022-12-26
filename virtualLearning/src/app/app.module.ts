@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { CourseFilterComponent } from './course-filter/course-filter.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     HeaderComponent,
     CourseFilterComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    CourseDetailsComponent
   ],
   imports: [
     BrowserModule,

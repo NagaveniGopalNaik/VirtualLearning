@@ -147,7 +147,7 @@
     </div>
   </div>
   <div class="search-data" *ngIf="searchOption == false">
-  <div class="search-datas">
+  <div class="search-datas" (click)="gotoCourseDetails()">
       <div class="image-details">
           <div class="course-image">
               <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
@@ -159,7 +159,7 @@
           </div>
       </div>
   </div>
-  <div class="search-datas">
+  <div class="search-datas" (click)="gotoCourseDetails()">
     <div class="image-details">
         <div class="course-image">
             <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
@@ -171,7 +171,7 @@
         </div>
     </div>
 </div>
-<div class="search-datas">
+<div class="search-datas" (click)="gotoCourseDetails()">
     <div class="image-details">
         <div class="course-image">
             <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
@@ -183,7 +183,7 @@
         </div>
     </div>
 </div>
-<div class="search-datas">
+<div class="search-datas" (click)="gotoCourseDetails()">
     <div class="image-details">
         <div class="course-image">
             <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
@@ -195,7 +195,7 @@
         </div>
     </div>
 </div>
-<div class="search-datas">
+<div class="search-datas" (click)="gotoCourseDetails()">
     <div class="image-details">
         <div class="course-image">
             <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
@@ -238,7 +238,7 @@
     </div>
     <div class="search-filter">
       <div class="searchbar">
-        <mat-icon class="search-icon1">search</mat-icon>
+        <mat-icon class="search-icon1" (click)="searchKey()">search</mat-icon>
         <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
         <input
           type="text"
@@ -256,7 +256,7 @@
             
       /></div>
     </div>
-    <div class="top-search">
+    <div class="top-search" *ngIf="searchOption == true">
       <p class="search-head">Top Search</p>
       <div class="button-list">
         <button mat-raised-button class="top-search-button backgroundColor" (click)="searchCatogary('Java')">Java</button>
@@ -275,7 +275,7 @@
       <p class="no-data">No matching course</p>
       <p class="sub-no-data">Try a different search or browse categories</p>
     </div>
-    <div class="top-search">
+    <div class="top-search"  *ngIf="searchOption == true">
       <p class="search-head">Search from Categories</p>
       <div class="button-list gap">
         
