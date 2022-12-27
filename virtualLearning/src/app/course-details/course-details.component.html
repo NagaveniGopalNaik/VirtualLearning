@@ -128,35 +128,436 @@
                 <p class="nav-root black-color font-size">User interface teacher www.appledesigntips.com</p>
             </div>
         </div>
-        <p class="nav-root black-color font-size">
+        <p class="nav-root black-color font-size height">
             Back in 2010, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high profile web and iPhone applications. The applications range from 3D medical aided web applications to project management applications for niche industries. 
 
-I am also the founder of a large local design organization, Salt Lake Designers, where I and other local influencers help cultivate the talents of up and coming UX designers through workshops and panel discussions <span class="show-more">Show more</span>
+I am also the founder of a large local design organization,  <span class="show-more">Show more</span>
         </p>
 
 
       </div>
       <div class="chapters-part" *ngIf="course_details_active == false">
-          <p class="course-d-head margin-top font">Course Content</p>
-          <p class="nav-root black font-size">
-            7 Chapter | 46 lessons | 6 Assignment Test | 3.5h
-            total length
-          </p>
-          <div class="chapters">
-              <p class="chapter-name">Chapter 1 - Introduction to the course</p>
-              <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
-              <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
-            </div>
-         
-        <div class="chapter-data" *ngIf="display_sub_chapter == true">
-           <div class="stepper">
-               <div class="sub-course">
-                   <div class="select-icon">add</div>
-                   
+        <p class="course-d-head margin-top font">Course Content</p>
+        <p class="nav-root black font-size">
+          7 Chapter | 46 lessons | 6 Assignment Test | 3.5h
+          total length
+        </p>
+      </div>
+      <div class="chapter-height" *ngIf="course_details_active == false">
+        
+          <div class="chapters-part">
+              
+              <div class="chapters">
+                  <p class="chapter-name">Chapter 1 - Introduction to the course</p>
+                  <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
+                  <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+                </div>
+             
+            <div class="chapter-data" *ngIf="display_sub_chapter == true">
+               <div class="stepper">
+                   <div class="sub-course">
+                       <div class="select-icon">
+                           <div class="cirlce-image">
+                               <img src="../../assets/images/Vector.png" alt="" class="icon">
+                               <div class = "vertical"></div>
+                           </div>
+                           
+                           <div class="sub-course-details">
+                              <div class="s-c-d">
+                                <p class="chapter-number margin">20</p>
+                                <div class="couraseName">
+                                    <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                                <p class="chapter-duration margin">01.38 mins</p>
+                                </div>
+                              </div>
+                              <div class="image2 point">
+                                  <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                                  <img src="../../assets/images/Red Play.svg" alt="" class="icon" *ngIf="false">
+                              </div>
+    
+                           </div>
+                           
+                       </div>
+                       
+                       <div class="select-icon">
+                        <div class="cirlce-image">
+                            <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                            <div class = "vertical verticl-grey"></div>
+                        </div>
+                        <div class="sub-course-details">
+                           <div class="s-c-d">
+                             <p class="chapter-number margin">20</p>
+                             <div class="couraseName">
+                                 <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                             <p class="chapter-duration margin">01.38 mins</p>
+                             </div>
+                           </div>
+                           <div class="image2 point">
+                               <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                               <img src="../../assets/images/grey play.svg" alt="" class="icon" *ngIf="false">
+                           </div>
+    
+                        </div>
+                        
+                    </div>
+                    <div class="select-icon">
+                        <div class="cirlce-image circle-image-color">
+                            <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                            <div class = "vertical verticl-grey"></div>
+                        </div>
+                        <div class="sub-course-details">
+                           <div class="s-c-d">
+                             <p class="chapter-number margin">20</p>
+                             <div class="couraseName">
+                                 <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                             <p class="chapter-duration margin">01.38 mins</p>
+                             </div>
+                           </div>
+                           <div class="image2">
+                               <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                               <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                           </div>
+    
+                        </div>
+                        
+                    </div>
+                    <div class="select-icon">
+                        <div class="cirlce-image circle-image-color">
+                            <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                            
+                        </div>
+                        <div class="sub-course-details">
+                           <div class="s-c-d">
+                             <p class="chapter-number margin">20</p>
+                             <div class="couraseName">
+                                 <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                             <p class="chapter-duration margin">01.38 mins</p>
+                             </div>
+                           </div>
+                           <div class="image2">
+                               <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                               <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                           </div>
+    
+                        </div>
+                        
+                    </div>
+                       
+                   </div>
                </div>
-           </div>
+            </div>
+          </div>
+    
+          <div class="chapters-part" *ngIf="course_details_active == false">
+              
+            <div class="chapters">
+                <p class="chapter-name">Chapter 1 - Introduction to the course</p>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+              </div>
+           
+          <div class="chapter-data" *ngIf="display_sub_chapter == true">
+             <div class="stepper">
+                 <div class="sub-course">
+                     <div class="select-icon">
+                         <div class="cirlce-image">
+                             <img src="../../assets/images/Vector.png" alt="" class="icon">
+                             <div class = "vertical"></div>
+                         </div>
+                         
+                         <div class="sub-course-details">
+                            <div class="s-c-d">
+                              <p class="chapter-number margin">20</p>
+                              <div class="couraseName">
+                                  <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                              <p class="chapter-duration margin">01.38 mins</p>
+                              </div>
+                            </div>
+                            <div class="image2 point">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon" *ngIf="false">
+                            </div>
+    
+                         </div>
+                         
+                     </div>
+                     
+                     <div class="select-icon">
+                      <div class="cirlce-image">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2 point">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon" *ngIf="false">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                     
+                 </div>
+             </div>
+          </div>
+        </div>
+    
+        <div class="chapters-part" *ngIf="course_details_active == false">
+              
+            <div class="chapters">
+                <p class="chapter-name">Chapter 1 - Introduction to the course</p>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+              </div>
+           
+          <div class="chapter-data" *ngIf="display_sub_chapter == true">
+             <div class="stepper">
+                 <div class="sub-course">
+                     <div class="select-icon">
+                         <div class="cirlce-image">
+                             <img src="../../assets/images/Vector.png" alt="" class="icon">
+                             <div class = "vertical"></div>
+                         </div>
+                         
+                         <div class="sub-course-details">
+                            <div class="s-c-d">
+                              <p class="chapter-number margin">20</p>
+                              <div class="couraseName">
+                                  <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                              <p class="chapter-duration margin">01.38 mins</p>
+                              </div>
+                            </div>
+                            <div class="image2 point">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon" *ngIf="false">
+                            </div>
+    
+                         </div>
+                         
+                     </div>
+                     
+                     <div class="select-icon">
+                      <div class="cirlce-image">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2 point">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon" *ngIf="false">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                     
+                 </div>
+             </div>
+          </div>
+        </div>
+    
+        <div class="chapters-part" *ngIf="course_details_active == false">
+              
+            <div class="chapters">
+                <p class="chapter-name">Chapter 1 - Introduction to the course</p>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
+                <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+              </div>
+           
+          <div class="chapter-data" *ngIf="display_sub_chapter == true">
+             <div class="stepper">
+                 <div class="sub-course">
+                     <div class="select-icon">
+                         <div class="cirlce-image">
+                             <img src="../../assets/images/Vector.png" alt="" class="icon">
+                             <div class = "vertical"></div>
+                         </div>
+                         
+                         <div class="sub-course-details">
+                            <div class="s-c-d">
+                              <p class="chapter-number margin">20</p>
+                              <div class="couraseName">
+                                  <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                              <p class="chapter-duration margin">01.38 mins</p>
+                              </div>
+                            </div>
+                            <div class="image2 point">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                                <img src="../../assets/images/Red Play.svg" alt="" class="icon" *ngIf="false">
+                            </div>
+    
+                         </div>
+                         
+                     </div>
+                     
+                     <div class="select-icon">
+                      <div class="cirlce-image">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2 point">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon" *ngIf="false">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          <div class = "vertical verticl-grey"></div>
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                  <div class="select-icon">
+                      <div class="cirlce-image circle-image-color">
+                          <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                          
+                      </div>
+                      <div class="sub-course-details">
+                         <div class="s-c-d">
+                           <p class="chapter-number margin">20</p>
+                           <div class="couraseName">
+                               <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                           <p class="chapter-duration margin">01.38 mins</p>
+                           </div>
+                         </div>
+                         <div class="image2">
+                             <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="false">
+                             <img src="../../assets/images/grey play.svg" alt="" class="icon1">
+                         </div>
+    
+                      </div>
+                      
+                  </div>
+                     
+                 </div>
+             </div>
+          </div>
         </div>
       </div>
+
       <div class="join-course">
           <p class="margin point">Join Course</p>
       </div>

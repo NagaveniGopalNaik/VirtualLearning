@@ -4,6 +4,7 @@
     padding: 0.5% 10%;
     text-align: left;
     
+    
 }
 .nav-roots{
     display: flex;
@@ -177,6 +178,13 @@ line-height: 2.4rem;
     object-fit: cover;
     
 }
+.chapter-height{
+    height: 80vh;
+    overflow-y: scroll;
+}
+.chapter-height::-webkit-scrollbar{
+    display: none;
+}
 .image,.image1{
    width: 1em;
    height: 1em;
@@ -215,8 +223,12 @@ ul{
     gap: 0;
 }
 
+
+
 .join-course{
-    width: 100%;
+    width: 92%;
+    margin: auto;
+    
     background-color: #EC5D52;
     text-align: center;
     color: #fff;
@@ -224,6 +236,8 @@ ul{
     font-family: Proxima Nova Soft;
     font-size: 2rem;
     font-weight: 400;
+    position: absolute;
+    bottom: 2%;
     
 }
 .font-size{
@@ -238,23 +252,35 @@ ul{
 .matIcon{
     color: #EC5D52;
 }
-.chapters,.sub-chapter{
+.chapters,.sub-chapter,.select-icon,.s-c-d,.sub-course-details{
     display: flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
 }
-.sub-chapter{
+
+.select-icon{
+   
+    margin-bottom: 5%;
+    position: relative;
+    
+}
+.sub-course-details{
+    width: 87%;
+    background-color: #F9F9F9;
+    padding: 2.5%;
+    border-radius: 6px;
+}
+.s-c-d{
+    justify-content: flex-start;
+    gap: 5%;
+}
+/* .sub-chapter{
     
     justify-content: flex-start;
     gap: 2%;
-}
-.chapter-name{
-    font-family: Proxima Nova Soft;
-    font-size: 1.8rem;
-    line-height: 4.4rem;
-    margin: 0;
-}
+} */
+
 .font{
     font-size: 1.6rem;
 }
@@ -267,7 +293,70 @@ ul{
     object-fit: cover;
 }
 
+.cirlce-image{
+    background-color: #1EAB0D;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
+.chapter-number{
+    font-family: Proxima Nova Soft;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.chapter-name{
+    font-family: Proxima Nova Soft;
+    font-size: 1.5rem;
+    line-height: 4.4rem;
+    margin: 0;
+}
+.chapter-duration{
+    font-family: Proxima Nova Soft;
+    font-size: 1rem;
+}
+.chapter-name1{
+    line-height: normal;
+    
+}
 
+.icon1{
+    width: 100%;
+    height: 100%;
+}
+.circle-image-color{
+    background-color: #E1E1E1;
+}
+.vertical {
+    border-left: 3px solid #1EAB0D;
+    height: 5em;
+    position: absolute;
+    top: 100%;
+    z-index: 0;
+    
+}
+.verticl-grey{
+    border-left: 3px solid #E1E1E1;
+}
 
+.height{
+    height: 18vh;
+    overflow-y: scroll;
+    
+}
+.height::-webkit-scrollbar{
+    display: none;
+}
+
+@media(max-width:800px){
+    .vertical{
+        height: 6.5em;
+    }
+}
 

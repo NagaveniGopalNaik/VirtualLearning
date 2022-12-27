@@ -23,11 +23,16 @@ image = "../../assets/images/illustration-in-UI.png";
   }
 
   displayDropDown(){
+    
 this.display_dropdown =true;
 
   }
   close(){
     this.display_dropdown = false;
+  }
+  myCourse(){
+    this.display_dropdown=false;
+    this.router.navigate(['/my-course']);
   }
 
   searchCourse(){

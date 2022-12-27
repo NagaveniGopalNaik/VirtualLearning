@@ -1,1 +1,307 @@
 <app-header></app-header>
+<div class="dashboard-body">
+    <p class="hello">Hello!</p>
+    <p class="user-name">Mahendra Singh Dhoni</p>
+
+    <!-- New courses -->
+    <div class="categories-list">
+        <div class="each-course">
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                <p class="course-name course-name-style">Product UX Design Course Sale</p>
+            </div>
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                <p class="course-name course-name-style">Product UX Design Course Sale</p>
+            </div>
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                <p class="course-name course-name-style">Product UX Design Course Sale</p>
+            </div>
+        </div>
+        <div class="pagination-button">
+            <span class="point" [class.pagination-active]="new_course_pagination == '1' || new_course_pagination == null" (click)="newCoursePagination('1')">.</span>
+            <span class="point" [class.pagination-active]="new_course_pagination == '2'" (click)="newCoursePagination('2')">.</span>
+            <span class="point" [class.pagination-active]="new_course_pagination == '3'" (click)="newCoursePagination('3')">.</span>
+            <span class="point" [class.pagination-active]="new_course_pagination == '4'" (click)="newCoursePagination('4')">.</span>
+        </div>
+    </div>
+
+    <!-- Ongoing course -->
+    <div class="ongoing-course">
+        <div class="course-name-see-all">
+            <p class="ongoing">Ongoing courses</p>
+            <p class="see-all point" routerLink="/my-course">See All</p>
+            
+        </div>
+        <div class="each-course">
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                
+                <div class="course-details">
+                    <div>
+                        <p class="course-name-style">Product UX Design Course Sale</p>
+                        <p class="course-name-style chap-size">15/20 Chapters</p>
+                    </div>
+                    <div class="continue">Continue</div>
+                </div>
+            </div>
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                
+                <div class="course-details">
+                    <div>
+                        <p class="course-name-style">Product UX Design Course Sale</p>
+                        <p class="course-name-style chap-size">15/20 Chapters</p>
+                    </div>
+                    <div class="continue">Continue</div>
+                </div>
+            </div>
+            <div class="course-image">
+                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                
+                <div class="course-details">
+                    <div>
+                        <p class="course-name-style">Product UX Design Course Sale</p>
+                        <p class="course-name-style chap-size">15/20 Chapters</p>
+                    </div>
+                    <div class="continue">Continue</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="course-name-see-all">
+         
+                <p class="ongoing">Categories</p>
+            <p class="see-all point">See All</p>
+            
+        </div>
+
+        <div class="top-search">
+           
+            <div class="button-list gap">
+            
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+                </span>
+                Design
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
+                </span>
+                Development
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
+                </span>
+                Business
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
+                </span>
+                Finance
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
+                </span>
+               Health&nbsp;&&nbsp;Fitness
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
+                </span>
+                Music
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
+                </span>
+                IT&nbsp;&&nbsp;Software
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
+                </span>
+                Marketing
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
+                </span>
+                Lifestyle
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
+                </span>
+                Photography
+              </div>
+              <div class="search-category point">
+                <span class="image-div">
+                  <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
+                </span>
+                Teaching
+              </div>
+             
+            </div>
+          </div>
+    </div>
+
+    <!-- Choice your course -->
+    <div class="choice-your-course">
+        <div class="course-name-see-all">
+            <p class="ongoing">Choice your course</p>
+            <p class="see-all point">See All</p>
+            
+        </div>
+        <div class="navbar">
+            <p class="navbar-option point" [class.nav-active]="(choice_course == 'All' || choice_course == null)" (click)="choiceYourCourse('All')">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</p>
+            <p class="navbar-option point" [class.nav-active]="(choice_course == 'Popular')" (click)="choiceYourCourse('Popular')">Popular</p>
+            <p class="navbar-option point" [class.nav-active]="(choice_course == 'Newest')" (click)="choiceYourCourse('Newest')">Newest</p>
+        </div>
+        <div class="choice-course">
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
+                <p class="see-all each-course-name">-</p>
+                <p class="see-all each-course-chapter">7 Chapters</p>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
+                <p class="see-all each-course-name">Essential Training </p>
+                <p class="see-all each-course-chapter">7 Chapters</p>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design </p>
+                <p class="see-all each-course-name">Essential Training </p>
+                <p class="see-all each-course-chapter">7 Chapters</p>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design </p>
+                <p class="see-all each-course-name">Essential Training </p>
+                <p class="see-all each-course-chapter">7 Chapters</p>
+            </mat-card>
+        </div>
+    </div>
+
+    <!-- Top course in business -->
+    <div class="choice-your-course">
+        <div class="course-name-see-all">
+            <p class="ongoing">Top courses in Business</p>
+            <p class="see-all point">See All</p>
+            
+        </div>
+        <div class="choice-course">
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <!-- Top course in design -->
+    <div class="choice-your-course">
+        <div class="course-name-see-all">
+            <p class="ongoing">Top courses in Design</p>
+            <p class="see-all point">See All</p>
+            
+        </div>
+        <div class="choice-course">
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+            <mat-card class="each-choice-course">
+                <div class="image-div">
+                    <img src="../../assets/images/banner-42 1.png" alt="">
+                </div>
+                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
+                <div class="chapter-clock">
+                    <p class="see-all each-course-chapter">7 Chapters</p>
+                <p class="see-all each-course-chapter"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

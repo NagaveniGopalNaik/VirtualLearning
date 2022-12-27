@@ -48,6 +48,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: red;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 @media(max-width:700px){
     .course-filter .mat-dialog-container{
         position: fixed;

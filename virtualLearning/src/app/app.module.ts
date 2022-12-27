@@ -13,6 +13,7 @@ import { CourseFilterComponent } from './course-filter/course-filter.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { MyCourseComponent } from './my-course/my-course.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     HeaderComponent,
     CourseFilterComponent,
     MobileMenuComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    MyCourseComponent
   ],
   imports: [
     BrowserModule,

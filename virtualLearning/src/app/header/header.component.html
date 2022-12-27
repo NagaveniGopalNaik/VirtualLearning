@@ -1,7 +1,7 @@
 <mat-card class="header-body">
   <div class="header-part">
     <div class="image">
-      <img src="../../assets/images/Group 118.png" alt="" class="img point" />
+      <img src="../../assets/images/Group 118.png" alt="" class="img point" routerLink="/dashboard"/>
     </div>
     <div class="search-part-div">
       <div class="search" [class.flexReverse]="searchOk == true">
@@ -210,7 +210,7 @@
   </div>
 </mat-card>
 <mat-card class="dropdown" [class.click-setting]="display_dropdown == true">
-  <div class="option border" (click)="close()">
+  <div class="option border" (click)="myCourse()">
     <mat-icon class="point">school</mat-icon>
     <p class="point">My Course</p>
   </div>

@@ -1,0 +1,127 @@
+.my-course-container{
+    width: 80%;
+    margin: auto;
+   
+}
+.nav-roots,.course-navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5%;
+    margin-bottom: 1%;
+}
+.course-navbar{
+    gap: 0;
+    margin-bottom: 3%;
+}
+
+.nav-root{
+    font-family: Biko;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #7A7A7A;
+    font-weight: 200;
+    padding: 0.5% 0;
+    
+}
+.nav-root-highlight{
+    color:#2BB5F4;
+}
+.navbar-option{
+    padding: 0.5% 1.5%;
+    color:#7A7A7A;
+    font-family: Proxima Nova Soft;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border-radius: 6px;
+}
+.nav-root-active{
+    background-color: #042C5C;
+    color: #fff;
+}
+
+.each-course{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* course details style */
+.ongoing,.course-name-style{
+    font-family: Biko;
+font-size: 1.6rem;
+color: #000;
+}
+
+.course-image{
+    position: relative;
+     width: 30%;
+     margin-bottom: 3%;
+ }
+ .image{
+    
+     width: 100%;
+     height: 100%;
+     border-radius: 6px;
+ }
+ .course-details{
+    position: absolute;
+    bottom: 0%;
+    width: 90%;
+    padding: 5%;
+    
+    
+}
+.status{
+    position: absolute;
+    /* background-color: red; */
+    top: 0%;
+    width: 90%;
+    padding: 5%;
+}
+.course-name-style{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 1%;
+    text-align: left;
+}
+.chap-size{
+    font-size: 1.2rem;
+    text-align: left;
+}
+.continue{
+    padding: 1% 2%;
+    background-color: #EC5D52;
+    border-radius: 4px;
+    color: #fff;
+    width: fit-content;
+    font-family: Proxima Nova Soft;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+
+@media(max-width:1100px){
+    .course-name-style{
+        font-size: 1rem;
+        
+    }
+    .chap-size{
+        font-size: 0.8rem;
+    }
+}
+@media(max-width:700px){
+    .course-image{
+        width: 100%;
+        margin: auto;
+     }
+     .course-name-style{
+         font-size: 2rem;
+     }
+     .chap-size{
+        font-size: 1.2rem;
+    }
+}
