@@ -112,16 +112,36 @@ color: #000;
     .chap-size{
         font-size: 0.8rem;
     }
+    .continue{
+        font-size: 1rem;
+    }
 }
 @media(max-width:700px){
+    .my-course-container{
+        width: 90vw;
+        margin: auto;
+    }
+    .ongoing-course{
+        height: 80vh;
+        overflow-y: scroll;
+    }
     .course-image{
         width: 100%;
         margin: auto;
      }
      .course-name-style{
-         font-size: 2rem;
+         font-size: 1.6rem;
      }
      .chap-size{
         font-size: 1.2rem;
+    }
+    .nav-root-highlight{
+        color: #2B2B2B;
+  font-family: Biko;
+  font-size: 2.6rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 3.5rem;
+  margin-top: 3%;
     }
 }

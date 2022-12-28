@@ -1,5 +1,7 @@
-<app-header></app-header>
-<div class="course-details-container">
+<div class="header" *ngIf="mobile_video_display == false">
+    <app-header></app-header>
+</div>
+<div class="course-details-container" *ngIf="mobile_video_display == false">
 <div class="nav-roots">
     <p class="nav-root nav-root-highlight">My course</p>
 <p class="nav-root nav-root-highlight increase-icon-size"> > </p>
@@ -9,8 +11,24 @@
     <div class="video-part">
 <div class="video-play point" (click)="playVideo()"  >
     <p class="course-name">Preview the course</p>
+    <mat-icon class="close-details">
+        <img src="../../assets/images/icn_close_white@1.5x.svg" alt="" class="point" routerLink="/dashboard">
+    </mat-icon>
     <img src="../../assets/images/Yellow Play.svg" alt="play button" class="play-button point" *ngIf="display_name==true">
     <video src="../../assets/pexels-polina-kovaleva-8035714.mp4" class="vidio-size" controls type="video/mp3" width="80%" height="30%"></video>
+    <div class="course-image-div">
+        <img src="../../assets/images/img_designcoursedetail1_bg@1.5x.svg" alt="">
+        <div class="course-name-category courseCategory">
+            <p class="name">Learn Figma - UI/UX Design Essential Training</p>
+            <div class="name-dur">
+                <div class="category">
+                    Design
+                </div>
+                <p class="dur">7 Chapter | 46 lessons</p>
+            </div>
+            
+        </div>
+    </div>
 <div class="course-name-duration" *ngIf="display_name==true">
     <p class="chap-name">Introduction</p>
     <p class="duration-chap" *ngIf="course_details_active == true">3 min</p>
@@ -19,33 +37,63 @@
 <div class="course-name-category">
     <div class="name-dur">
         <p class="name">Learn Figma - UI/UX Design Essential Training</p>
-    
+        <p class="dur">7 Chapter | 46 lessons</p>
     </div>
     <div class="category">
         Design
     </div>
 </div>
-<p class="dur">7 Chapter | 46 lessons</p>
+
 <hr class="line" *ngIf="course_details_active == true">
+<div class="ovr-chap-navbar">
+    <p [class.details-active]="course_details_active == true" (click)="courseDetailsOverview()">Overview</p>
+    <p [class.details-active]="course_details_active == false" (click)="courseDetailsChapter()">Chapters</p>
+</div>
 <p class="nav-root nav-root-highlight font-size" *ngIf="course_details_active == true">
     Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach. Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach.
 </p>
-<p class="nav-root black-color font-size" *ngIf="course_details_active == true">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes. Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs <span class="show-more">Show more</span></p>
+
+<!-- Video part -->
+<div class="videoNavigationPart" *ngIf="course_details_active == true">
+    <p class="preview">Preview this course</p>
+    <div class="preview-image-div">
+        <img src="../../assets/images/img_preview1_bg@1.5x.svg" alt="" class="image-preview">
+        <div class="video-details">
+            <div class="img">
+                <img src="../../assets/images/Yellow Play.svg" alt="" width="50%" (click)="displayVideo()" class="point">
+                <div class="video-name">
+                    <p class="title">Introduction</p>
+                    <p class="duration">3 mins</p>
+                </div>
+            </div>
+           
+            <mat-icon class="next point">keyboard_arrow_right</mat-icon>
+    
+        </div>
     </div>
-    <mat-card class="details-part">
+
+    
+</div>
+
+
+<p class="nav-root black-color font-size black" *ngIf="course_details_active == true">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes. Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs <span class="show-more">Show more</span></p>
+    </div>
+
+    <!-- Course details part -->
+    <div class="details-part border">
       <div class="overview-chapters">
           <p [class.details-active]="course_details_active == true" (click)="courseDetailsOverview()">Overview</p>
           <p [class.details-active]="course_details_active == false" (click)="courseDetailsChapter()">Chapters</p>
       </div>
       <div class="overview-part" *ngIf="course_details_active == true">
    
-             <p class="course-d-head">Course&nbsp;Includes</p>
+             <p class="course-d-head margin-less">Course&nbsp;Includes</p>
          <div class="course-includes">
              <div class="image">
                  <img src="../../assets/images/overview/Shape (3).png" alt="" class="icon" width="80%">
              </div>
             
-                <p class="nav-root margin font-size">3.5 total hours video</p>
+                <p class="nav-root margin font-size mobile-details-font-size">3.5 total hours video</p>
              
          </div>
          <div class="course-includes">
@@ -99,36 +147,36 @@
         <div class="image1">
           <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
         </div>
-        <p class="nav-root black-color margin font-size">You will have a fully interactive design and prototype at the end of this course</p>
+        <p class="nav-root black-color margin font-size color-change">You will have a fully interactive design and prototype at the end of this course</p>
     </div>
     <div class="will-learn">
         <div class="image1">
           <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
         </div>
-        <p class="nav-root black-color margin font-size">Design mobile and desktop apps</p>
+        <p class="nav-root black-color margin font-size color-change">Design mobile and desktop apps</p>
     </div>
     <div class="will-learn">
         <div class="image1">
           <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
         </div>
-        <p class="nav-root black-color margin font-size">You will learn how to reuse design elements for future projects</p>
+        <p class="nav-root black-color margin font-size color-change">You will learn how to reuse design elements for future projects</p>
     </div>
         <p class="course-d-head margin-top">Requirements</p>
         <ul>
-            <li class="nav-root black-color font-size">Internet Access </li>
-            <li class="nav-root black-color font-size">You should know your way around comouter basics</li>
+            <li class="nav-root black-color font-size color-change">Internet Access </li>
+            <li class="nav-root black-color font-size color-change">You should know your way around comouter basics</li>
         </ul>
         <p class="course-d-head margin-top">Instructor</p>
         <div class="instructor-details">
             <div class="instructor-image">
-                <img src="../../assets/images/img_instructor1 copy@3x 1.png" alt="" width="80%" height="80%">
+                <img src="../../assets/images/img_instructor1 copy@3x 1.png" alt="" width="80em" height="80em">
             </div>
             <div class="name-professional">
                 <p class="course-d-head margin">Dean Mathew</p>
-                <p class="nav-root black-color font-size">User interface teacher www.appledesigntips.com</p>
+                <p class="nav-root black-color font-size color-change">User interface teacher www.appledesigntips.com</p>
             </div>
         </div>
-        <p class="nav-root black-color font-size height">
+        <p class="nav-root black-color font-size height color-change">
             Back in 2010, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high profile web and iPhone applications. The applications range from 3D medical aided web applications to project management applications for niche industries. 
 
 I am also the founder of a large local design organization,  <span class="show-more">Show more</span>
@@ -137,7 +185,7 @@ I am also the founder of a large local design organization,  <span class="show-m
 
       </div>
       <div class="chapters-part" *ngIf="course_details_active == false">
-        <p class="course-d-head margin-top font">Course Content</p>
+        <p class="course-d-head margin-top font margin-less">Course Content</p>
         <p class="nav-root black font-size">
           7 Chapter | 46 lessons | 6 Assignment Test | 3.5h
           total length
@@ -166,7 +214,7 @@ I am also the founder of a large local design organization,  <span class="show-m
                               <div class="s-c-d">
                                 <p class="chapter-number margin">20</p>
                                 <div class="couraseName">
-                                    <p class="chapter-name chapter-name1 margin">Creating a New Project and File</p>
+                                    <p class="chapter-name chapter-name1 margin active-video">Creating a New Project and File</p>
                                 <p class="chapter-duration margin">01.38 mins</p>
                                 </div>
                               </div>
@@ -181,7 +229,7 @@ I am also the founder of a large local design organization,  <span class="show-m
                        
                        <div class="select-icon">
                         <div class="cirlce-image">
-                            <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
+                            <img src="../../assets/images/Ellipse 7.png active-video" alt="" class="icon">
                             <div class = "vertical verticl-grey"></div>
                         </div>
                         <div class="sub-course-details">
@@ -561,6 +609,18 @@ I am also the founder of a large local design organization,  <span class="show-m
       <div class="join-course">
           <p class="margin point">Join Course</p>
       </div>
-    </mat-card>
+    </div>
 </div>
+</div>
+
+<div class="vidio-display" [class.display-ok]="mobile_video_display == true" *ngIf="mobile_video_display == true">
+    
+    <video src="../../assets/pexels-polina-kovaleva-8035714.mp4" class="display-videos" controls type="video/mp3">
+    
+           
+        
+    </video>
+  
+        <img src="../../assets/images/icn_close_white@1.5x.svg" alt="" class="close point" (click)="closeVideo()" >
+  
 </div>
