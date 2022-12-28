@@ -70,6 +70,22 @@ bottom: 5%;
     text-align: center;
    
 }
+.image-course-type{
+    width: 100%;
+    position: relative;
+}
+.course-type{
+    width: fit-content;
+    padding: 1% 3%;
+    background-color: #FCBE4B;
+    color: #000;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
 .header{
     font-family: Proxima Nova Soft;
     font-size: 2rem;
@@ -173,6 +189,7 @@ bottom: 5%;
     width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    position: relative;
 }
 
 .hello,.see-all,.user-name,.navbar-option{
