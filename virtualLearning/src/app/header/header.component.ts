@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CourseFilterComponent } from '../course-filter/course-filter.component';
+import { DashboardService } from '../dashboard.service';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
 @Component({
   selector: 'app-header',
@@ -16,10 +17,12 @@ searchOption=true;
 searchCancel=false;
 mobile_menu=false;
 search_view=false;
+userImage:any;
 image = "../../assets/images/illustration-in-UI.png";
-  constructor(private dialog:MatDialog,private router:Router) { }
+  constructor(private dialog:MatDialog,private router:Router,private dashboardService:DashboardService) { }
 
   ngOnInit(): void {
+    this.getUserImage();
   }
 
   displayDropDown(){
@@ -84,5 +87,19 @@ closeSearchs(){
 gotoCourseDetails(){
   this.closeSearch();
   this.router.navigate(['/course-details']);
+}
+
+// Api call for api
+getUserImage(){
+  this.dashboardService.getUserImage().subscribe({
+    next:(data)=>{
+      this.userImage = data;
+
+    },
+    error:(error)=>{
+      console.log(error);
+
+    }
+  })
 }
 }

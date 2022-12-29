@@ -33,14 +33,14 @@
        </div>
 
        <div class="login-form">
-           <form action="">
+           <form action="" [formGroup]="loginForm">
                <mat-form-field>
                    <mat-label>Username</mat-label>
-                   <input type="text" matInput [(ngModel)]="username" name="username">
+                   <input type="text" matInput formControlName="userName" name="userName">
                </mat-form-field>
                <mat-form-field>
                    <mat-label>Enter Password</mat-label>
-                   <input type="password" matInput [(ngModel)]="password" name="password">
+                   <input type="password" matInput formControlName="password" name="password">
                   
                </mat-form-field>
                <div class="forgot">

@@ -18,12 +18,14 @@
           
         </div>
         <div class="filter point" [class.search-ok]="searchOk == true" (click)="filter_course()">
-          <img
+          
+            <img
             src="../../assets/images/Mask_Group_9 Clipped.png"
             alt=""
             width="70%"
             height="70%"
           />
+          
         </div>
       </div>
     <!-- </div> -->
@@ -44,7 +46,7 @@
       </div>
       <div class="profile">
         <img
-          src="../../assets/images/Screenshot 2021-04-01 at 7.54.07 AM.png"
+          [src]="userImage"
           alt=""
           class="profile-image point"
         />
@@ -58,11 +60,11 @@
     <div class="top-search">
       <p class="search-head">Top Search</p>
       <div class="button-list">
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Java')">Java</button>
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Angular')">Angular</button>
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('JavaScript')">JavaScript</button>
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Designing')">Designing</button>
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Data analyst')">
+        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Java')">Java</button>
+        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Angular')">Angular</button>
+        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('JavaScript')">JavaScript</button>
+        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Designing')">Designing</button>
+        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Data analyst')">
           Data analyst
         </button>
         <button mat-raised-button class="top-search-button" (click)="searchCatogary('Backend course')">
@@ -106,7 +108,7 @@
           <span class="image-div">
             <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
           </span>
-         Health&nbsp;&&nbsp;Fitness
+         <span>Health&nbsp;&&nbsp;Fitness</span>
         </div>
         <div class="search-category point" (click)="searchCatogary('Music')">
           <span class="image-div">

@@ -1,24 +1,18 @@
 <app-header></app-header>
 <div class="dashboard-body">
     <p class="hello">Hello!</p>
-    <p class="user-name">Mahendra Singh Dhoni</p>
+    <p class="user-name">{{userName.fullName}}</p>
 
     <!-- New courses -->
     <div class="categories-list">
-        <div class="each-course">
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name course-name-style">Product UX Design Course Sale</p>
+        
+            <div class="each-course">
+                <div class="course-image" *ngFor="let category of categoryData;index as i">
+                    <img [src]="category.courseImage" alt="" class="image">
+                    <p class="course-name course-name-style">Product UX Design Course Sale</p>
+                </div>
             </div>
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name course-name-style">Product UX Design Course Sale</p>
-            </div>
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name course-name-style">Product UX Design Course Sale</p>
-            </div>
-        </div>
+        
         <div class="pagination-button">
             <span class="point" [class.pagination-active]="new_course_pagination == '1' || new_course_pagination == null" (click)="newCoursePagination('1')">.</span>
             <span class="point" [class.pagination-active]="new_course_pagination == '2'" (click)="newCoursePagination('2')">.</span>
@@ -27,48 +21,28 @@
         </div>
     </div>
 
-    <!-- Ongoing course -->
+    <!-- Ongoing course --> 
     <div class="categories-list">
         <div class="ongoing-course">
             <div class="course-name-see-all">
                 <p class="ongoing">Ongoing courses</p>
-                <p class="see-all margin point" routerLink="/my-course">See All</p>
+                <p class="see-all margin point" (click)="seeAllData()">See All</p>
                 
             </div>
             <div class="each-course">
-                <div class="course-image">
-                    <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+                <div class="course-image" *ngFor="let eachCourse of ongoingCourse;index as i">
+                    <img [src]="eachCourse.courseImage" alt="" class="image">
                     
                     <div class="course-details">
                         <div>
-                            <p class="course-name-style">Product UX Design Course Sale</p>
-                            <p class="course-name-style chap-size">15/20 Chapters</p>
+                            <p class="course-name-style">{{eachCourse.courseTitle}}</p>
+                            <p class="course-name-style chap-size">{{eachCourse.courseContent.totalChapters}}/{{eachCourse.courseContent.totalLessons}} Chapters</p>
                         </div>
-                        <div class="continue">Continue</div>
+                        <div class="continue">{{eachCourse.category}}</div>
                     </div>
                 </div>
-                <div class="course-image">
-                    <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                    
-                    <div class="course-details">
-                        <div>
-                            <p class="course-name-style">Product UX Design Course Sale</p>
-                            <p class="course-name-style chap-size">15/20 Chapters</p>
-                        </div>
-                        <div class="continue">Continue</div>
-                    </div>
-                </div>
-                <div class="course-image">
-                    <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                    
-                    <div class="course-details">
-                        <div>
-                            <p class="course-name-style">Product UX Design Course Sale</p>
-                            <p class="course-name-style chap-size">15/20 Chapters</p>
-                        </div>
-                        <div class="continue">Continue</div>
-                    </div>
-                </div>
+              
+                
                 
             </div>
         </div>
@@ -78,87 +52,89 @@
         <div class="course-name-see-all">
          
                 <p class="ongoing">Categories</p>
-            <p class="see-all point">See All</p>
+            <!-- <p class="see-all point">See All</p> -->
             
         </div>
 
         <div class="top-search">
            
             <div class="button-list gap">
+                <div class="category-data" *ngFor="let eachCategory of courseCategories;index as i">
             
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
-                </span>
-                Design
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
-                </span>
-                Development
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
-                </span>
-                Business
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
-                </span>
-                Finance
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
-                </span>
-               Health&nbsp;&&nbsp;Fitness
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
-                </span>
-                Music
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
-                </span>
-                IT&nbsp;&&nbsp;Software
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
-                </span>
-                Marketing
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
-                </span>
-                Lifestyle
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
-                </span>
-                Photography
-              </div>
-              <div class="search-category point">
-                <span class="image-div">
-                  <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
-                </span>
-                Teaching
-              </div>
-             
+                    <div class="search-category point" *ngIf="eachCategory === 'Design'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+                      </span>
+                      <span>Design</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Development'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
+                      </span>
+                     <span> Development</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Business'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
+                      </span>
+                      <span>Business</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Finance'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
+                      </span>
+                      <span>Finance</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Health & Fitness'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
+                      </span>
+                     <span>Health&nbsp;&&nbsp;Fitness</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Music'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
+                      </span>
+                      <span>Music</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'IT & Software'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
+                      </span>
+                      <span>IT&nbsp;&&nbsp;Software</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Marketing'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
+                      </span>
+                      <span>Marketing</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Lifestyle'">
+                      <span class="image-div1">
+                        <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
+                      </span>
+                      <span>Lifestyle</span>
+                    </div>
+                    <div class="search-category point lessPadding" *ngIf="eachCategory === 'Photography'">
+                      <span class="image-div1 less-size">
+                        <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
+                      </span>
+                      <span>Photography</span>
+                    </div>
+                    <div class="search-category point" *ngIf="eachCategory === 'Teaching'">
+                      <span class="image-div1 less-size">
+                        <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
+                      </span>
+                      <span>Teaching</span>
+                    </div>
+                   
+                  </div>
             </div>
           </div>
     </div>
 
     <!-- Choice your course -->
-    <div class="choice-your-course">
+    <!-- <div class="choice-your-course">
         <div class="course-name-see-all">
             <p class="ongoing">Choice your course</p>
             <p class="see-all point">See All</p>
@@ -221,10 +197,10 @@
            
         </div>
        </div>
-    </div>
+    </div> -->
 
     <!-- Top course in business -->
-    <div class="choice-your-course">
+    <!-- <div class="choice-your-course">
         <div class="course-name-see-all">
             <p class="ongoing">Top courses in Business</p>
             <p class="see-all point">See All</p>
@@ -272,10 +248,10 @@
                 </div>
             </mat-card>
         </div>
-    </div>
+    </div> -->
 
     <!-- Top course in design -->
-    <div class="choice-your-course">
+    <!-- <div class="choice-your-course">
         <div class="course-name-see-all">
             <p class="ongoing">Top courses in Design</p>
             <p class="see-all point">See All</p>
@@ -323,5 +299,5 @@
                 </div>
             </mat-card>
         </div>
-    </div>
+    </div> -->
 </div>

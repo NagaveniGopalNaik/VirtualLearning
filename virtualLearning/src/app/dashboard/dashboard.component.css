@@ -13,27 +13,37 @@
 .each-course,.course-name-see-all,.course-details,.navbar,.choice-course,.chapter-clock{
     width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 .course-name-see-all{
     margin-top: 3%;
 }
 .course-image{
    position: relative;
-    width: 30%;
+    width: 32%;
+    height: 15vw;
+}
+.margin-top{
+    padding-top:4.6%;
+  
 }
 .image{
    
-    width: 100%;
-    height: 100%;
+   width: 100%;
+   height: 100%;
+   object-fit: fill;
+    filter: brightness(75%);
     border-radius: 6px;
 }
 .course-name,.chapters-count{
 position: absolute;
 left: 5%;
-bottom: 5%;
+bottom: 5px;
 }
 
 
@@ -95,17 +105,16 @@ bottom: 5%;
 }
 .top-search{
    
-    width: 100%;
-
-    
+    width: 100%; 
 }
+
 
 
 .button-list{
    
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
+    gap: 1em;
 }
 .top-search-button,.search-category{
     width: fit-content;
@@ -125,12 +134,14 @@ bottom: 5%;
     justify-content: flex-start;
     text-align: center;
     gap: 5%;
-    padding: 0 1%;
+    padding: 1% 5%;
+    padding-top: 5%;
     background-color: white;
     border-radius: 6px;
     margin-bottom: 1%;
     border: 1px solid #E4E4E4;
 }
+
 .margin-top{
     margin-top: 1%;
 }
@@ -166,6 +177,7 @@ bottom: 5%;
     font-family: Proxima Nova Soft;
     font-size: 1.4rem;
     font-weight: 300;
+    min-width: fit-content;
 }
 .navbar,.chapter-clock{
     justify-content: flex-start;
@@ -185,11 +197,26 @@ bottom: 5%;
     border-radius: 6px;
 }
 
-.image-div img{
+.image-div1 img{
     width: 100%;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     position: relative;
+}
+
+.image-div1{
+   
+    /* height: 2em; */
+    width: 2em;
+}
+.less-size{
+    width: 1.8em;
+}
+
+.image-div1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 .hello,.see-all,.user-name,.navbar-option{
@@ -275,9 +302,14 @@ color: #000;
         gap: 10%;
         margin-right: 0%;
     }
+    .Allcourse{
+        display: flex;
+        background-color: red;
+    }
    
     .course-image{
         width: 100%;
+        height: 40vw;
         align-items: flex-start;
         
     }
