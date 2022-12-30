@@ -7,6 +7,7 @@
     width: 100%;
     position: relative;
     
+    
 }
 /* .logo-search{
 min-width: 80%;
@@ -18,7 +19,7 @@ gap: 19%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 6vh;
+    min-height: 8vh;
 }
 
 .profile-notification{
@@ -27,14 +28,17 @@ gap: 19%;
     gap: 20%;
 }
 .profile{
-    width: 100%;
+ 
+    width: 6em;
+    height: 2.5em;
     /* height: 100%; */
     
 }
 
 .profile-image{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 3em;
     border-radius: 50%;
     
 }
@@ -303,7 +307,9 @@ flex-direction: row-reverse;
   
     .mobile-screen-header{
         display: block;
-    
+    background-color: #fff;
+    z-index: 1;
+    min-height: 10vh;
         /* width: 90vw; */
         /* padding: 5%; */
         display: flex;

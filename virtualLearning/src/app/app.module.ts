@@ -15,6 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { MyCourseComponent } from './my-course/my-course.component';
 import { CustomInterceptor } from './custom.interceptor';
+import { DurationPipe } from './duration.pipe';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CustomInterceptor } from './custom.interceptor';
     CourseFilterComponent,
     MobileMenuComponent,
     CourseDetailsComponent,
-    MyCourseComponent
+    MyCourseComponent,
+    DurationPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

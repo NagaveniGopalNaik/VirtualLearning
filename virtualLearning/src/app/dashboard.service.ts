@@ -27,11 +27,37 @@ export class DashboardService {
     return this.http.get(`${base_url}ongoingCourses`,{params:new HttpParams().set('choice',choice)});
   }
 
+  getCompletedCourse(){
+    
+    return this.http.get(`${base_url}completedCourses`,{params:new HttpParams().set('choice','seeAll')});
+  }
+
+  // completedCourses
+
   getCourseCategory(){
     let body={
       "choice":"seeAll"
     }
     return this.http.post(`${base_url}getCategories`,body);
+  }
+
+  getChoiceCourse(data:any){
+    let view = sessionStorage.getItem('choice') || '';
+    let body={
+      "choice":data,
+      "view":view
+
+    }
+    return this.http.post(`${base_url}choiceYourCourse`,body);
+  }
+
+  getBusinessTopCourse(data:any){
+    let view = sessionStorage.getItem('choice') || '';
+    let body = {
+      "text":data,
+    "choice":view
+    }
+    return this.http.post(`${base_url}topCoursesInCategory`,body);
   }
 
   

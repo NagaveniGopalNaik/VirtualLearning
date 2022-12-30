@@ -1,5 +1,9 @@
-<app-header></app-header>
-<div class="my-course-container">
+
+<div class="header">
+    <app-header></app-header>
+
+</div>
+<div class="my-course-container" *ngIf="currentCourse == 'ongoing' && viewCertificates == false">
     <div class="nav-roots">
         <p class="nav-root nav-root-highlight">My Course</p>
     
@@ -12,65 +16,50 @@
         
         <div class="each-course">
             
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
+            <div class="course-image" *ngFor="let course of courseList;index as i">
+                <img *ngIf="course_completion_status == 'Ongoing'" [src]="course.courseImage" alt="" class="image">
+                <img *ngIf="course_completion_status == 'Completed'" [src]="course.image" alt="" class="image">
                 <p class="course-name-style status">{{course_completion_status}}</p>
                 <div class="course-details">
                     <div>
-                        <p class="course-name-style">Product UX Design Course Sale</p>
-                        <p class="course-name-style chap-size">15/20 Chapters</p>
+                        <p *ngIf="course_completion_status == 'Ongoing'" class="course-name-style">{{course.courseTitle}}</p>
+                        <p *ngIf="course_completion_status == 'Completed'" class="course-name-style">{{course.title}}</p>
+                        <p *ngIf="course_completion_status == 'Ongoing'" class="course-name-style chap-size">{{course.courseContent.totalChapters}}/{{course.courseContent.totalLessons}} Chapters</p>
+                        <p *ngIf="course_completion_status == 'Completed'" class="course-name-style chap-size">{{course.approvalRate}} Approval Rate</p>
                     </div>
-                    <div class="continue point">Continue</div>
-                </div>
-            </div>
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name-style status">{{course_completion_status}}</p>
-                <div class="course-details">
-                    <div>
-                        <p class="course-name-style">Product UX Design Course Sale</p>
-                        <p class="course-name-style chap-size">15/20 Chapters</p>
-                    </div>
-                    <div class="continue point">Continue</div>
-                </div>
-            </div>
-
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name-style status">{{course_completion_status}}</p>
-                <div class="course-details">
-                    <div>
-                        <p class="course-name-style">Product UX Design Course Sale</p>
-                        <p class="course-name-style chap-size">15/20 Chapters</p>
-                    </div>
-                    <div class="continue point">Continue</div>
-                </div>
-            </div>
-            
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name-style status">{{course_completion_status}}</p>
-                <div class="course-details">
-                    <div>
-                        <p class="course-name-style">Product UX Design Course Sale</p>
-                        <p class="course-name-style chap-size">15/20 Chapters</p>
-                    </div>
-                    <div class="continue point">Continue</div>
-                </div>
-            </div>
-            <div class="course-image">
-                <img src="../../assets/images/banner-42 1.png" alt="" class="image">
-                <p class="course-name-style status">{{course_completion_status}}</p>
-                <div class="course-details">
+                    <div class="continue point" *ngIf="course_completion_status == 'Ongoing'" (click)="continue(course._id)">Continue</div>
+                    <div class="continue point" *ngIf="course_completion_status == 'Completed'" (click)="viewCertificate()">View Certificate</div>
                     
-                    <div>
-                        <p class="course-name-style">Product UX Design Course Sale</p>
-                        <p class="course-name-style chap-size">15/20 Chapters</p>
-                    </div>
-                    <div class="continue point">Continue</div>
+                    
                 </div>
             </div>
-            
+           
         </div>
     </div>
+</div>
+
+<div class="my-course-container" *ngIf="currentCourse != 'ongoing'">
+    <p class="allCourse">All courses</p>
+    <div class="ongoing-course">
+        
+        <div class="each-course">
+            
+            <div class="course-image" *ngFor="let course of courseList;index as i">
+                <img [src]="course.courseImage" alt="" class="image">
+                <!-- <p class="course-name-style status">{{course_completion_status}}</p> -->
+                <div class="course-details">
+                    <div>
+                        <p class="course-name-style">{{course.courseTitle}}</p>
+                        <p class="course-name-style chap-size">{{course.courseContent.totalChapters}}/{{course.courseContent.totalLessons}} Chapters</p>
+                    </div>
+                    <div class="continue point">{{course.category}}</div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<div class="viewCertificate" *ngIf="viewCertificates == true">
+ <img src="../../assets/images/certificate.png" alt="">
 </div>

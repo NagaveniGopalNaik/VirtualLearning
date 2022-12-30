@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CourseFilterComponent } from '../course-filter/course-filter.component';
 import { DashboardService } from '../dashboard.service';
 import { MobileMenuComponent } from '../mobile-menu/mobile-menu.component';
+import { SearchService } from '../search.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,10 +20,11 @@ mobile_menu=false;
 search_view=false;
 userImage:any;
 image = "../../assets/images/illustration-in-UI.png";
-  constructor(private dialog:MatDialog,private router:Router,private dashboardService:DashboardService) { }
+  constructor(private dialog:MatDialog,private router:Router,private dashboardService:DashboardService,private searchService:SearchService) { }
 
   ngOnInit(): void {
     this.getUserImage();
+    this.getSearchService();
   }
 
   displayDropDown(){
@@ -99,6 +101,15 @@ getUserImage(){
     error:(error)=>{
       console.log(error);
 
+    }
+  })
+}
+
+getSearchService(){
+  this.searchService.getTopSearch().subscribe({
+    next:(data)=>{
+      console.log(data);
+      
     }
   })
 }

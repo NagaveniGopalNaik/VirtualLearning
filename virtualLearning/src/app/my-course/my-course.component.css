@@ -1,7 +1,35 @@
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
 .my-course-container{
     width: 80%;
     margin: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    margin-top: 10vh;
    
+}
+.viewCertificate{
+    width: 100vw;
+    height: 100vh;
+}
+.viewCertificate img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.allCourse{
+    font-family: Biko;
+font-size: 1.6rem;
+color: #000;
+text-align: left;
+line-height: 6rem;
 }
 .nav-roots,.course-navbar{
     display: flex;
@@ -58,14 +86,18 @@ color: #000;
 
 .course-image{
     position: relative;
+    /* margin-top: 10%; */
      width: 30%;
+     height: 13vw;
      margin-bottom: 3%;
+     
  }
- .image{
-    
+ .course-image img{
      width: 100%;
      height: 100%;
+     object-fit: cover;
      border-radius: 6px;
+     filter: brightness(60%);
  }
  .course-details{
     position: absolute;
@@ -87,6 +119,7 @@ color: #000;
     font-weight: 400;
     margin-bottom: 1%;
     text-align: left;
+    margin: 0;
 }
 .chap-size{
     font-size: 1.2rem;
@@ -127,7 +160,9 @@ color: #000;
     }
     .course-image{
         width: 100%;
-        margin: auto;
+        height: 40vw;
+        margin-bottom: 1%;
+        /* margin: auto; */
      }
      .course-name-style{
          font-size: 1.6rem;

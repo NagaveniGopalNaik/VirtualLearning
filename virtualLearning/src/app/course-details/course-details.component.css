@@ -1,8 +1,18 @@
+/* .header{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+} */
+
 .course-details-container{
     box-sizing: border-box;
     margin: 0;
     padding: 0.5% 10%;
     text-align: left;
+    /* max-height: 100vh; */
+    margin-top: 10vh;
+    /* overflow-y: auto; */
     
     
 }

@@ -1,303 +1,167 @@
-<app-header></app-header>
-<div class="dashboard-body">
-    <p class="hello">Hello!</p>
-    <p class="user-name">{{userName.fullName}}</p>
 
-    <!-- New courses -->
-    <div class="categories-list">
-        
-            <div class="each-course">
-                <div class="course-image" *ngFor="let category of categoryData;index as i">
-                    <img [src]="category.courseImage" alt="" class="image">
-                    <p class="course-name course-name-style">Product UX Design Course Sale</p>
+
+   <div class="header">
+    <app-header></app-header>
+
+   </div>
+<div class="display-data">
+    <div class="dashboard-body">
+        <p class="hello">Hello!</p>
+        <p class="user-name">{{userName.fullName}}</p>
+    
+        <!-- New courses -->
+        <div class="categories-list">
+            
+                <div class="each-course">
+                    <div class="course-image" *ngFor="let category of categoryData;index as i">
+                        <img [src]="category.courseImage" alt="" class="image">
+                        <p class="course-name course-name-style">Product UX Design Course Sale</p>
+                    </div>
                 </div>
+            
+            <div class="pagination-button">
+                <span class="point" [class.pagination-active]="new_course_pagination == '1' || new_course_pagination == null" (click)="newCoursePagination('1')">.</span>
+                <span class="point" [class.pagination-active]="new_course_pagination == '2'" (click)="newCoursePagination('2')">.</span>
+                <span class="point" [class.pagination-active]="new_course_pagination == '3'" (click)="newCoursePagination('3')">.</span>
+                <span class="point" [class.pagination-active]="new_course_pagination == '4'" (click)="newCoursePagination('4')">.</span>
             </div>
-        
-        <div class="pagination-button">
-            <span class="point" [class.pagination-active]="new_course_pagination == '1' || new_course_pagination == null" (click)="newCoursePagination('1')">.</span>
-            <span class="point" [class.pagination-active]="new_course_pagination == '2'" (click)="newCoursePagination('2')">.</span>
-            <span class="point" [class.pagination-active]="new_course_pagination == '3'" (click)="newCoursePagination('3')">.</span>
-            <span class="point" [class.pagination-active]="new_course_pagination == '4'" (click)="newCoursePagination('4')">.</span>
         </div>
-    </div>
-
-    <!-- Ongoing course --> 
-    <div class="categories-list">
-        <div class="ongoing-course">
-            <div class="course-name-see-all">
-                <p class="ongoing">Ongoing courses</p>
-                <p class="see-all margin point" (click)="seeAllData()">See All</p>
-                
-            </div>
-            <div class="each-course">
-                <div class="course-image" *ngFor="let eachCourse of ongoingCourse;index as i">
-                    <img [src]="eachCourse.courseImage" alt="" class="image">
+    
+        <!-- Ongoing course --> 
+        <div class="categories-list">
+            <div class="ongoing-course">
+                <div class="course-name-see-all">
+                    <p class="ongoing">Ongoing courses</p>
+                    <p class="see-all margin point" (click)="seeAllData('ongoing')">See All</p>
                     
-                    <div class="course-details">
-                        <div>
-                            <p class="course-name-style">{{eachCourse.courseTitle}}</p>
-                            <p class="course-name-style chap-size">{{eachCourse.courseContent.totalChapters}}/{{eachCourse.courseContent.totalLessons}} Chapters</p>
+                </div>
+                <div class="each-course">
+                    <div class="course-image" *ngFor="let eachCourse of ongoingCourse;index as i">
+                        <img [src]="eachCourse.courseImage" alt="" class="image">
+                        
+                        <div class="course-details">
+                            <div>
+                                <p class="course-name-style">{{eachCourse.courseTitle}}</p>
+                                <p class="course-name-style chap-size">{{eachCourse.courseContent.totalChapters}}/{{eachCourse.courseContent.totalLessons}} Chapters</p>
+                            </div>
+                            <div class="continue">{{eachCourse.category}}</div>
                         </div>
-                        <div class="continue">{{eachCourse.category}}</div>
                     </div>
+                  
+                    
+                    
                 </div>
-              
-                
-                
             </div>
         </div>
-    </div>
-
-    <div class="categories">
-        <div class="course-name-see-all">
-         
-                <p class="ongoing">Categories</p>
-            <!-- <p class="see-all point">See All</p> -->
-            
+    
+        <div class="categories">
+            <div class="course-name-see-all">
+             
+                    <p class="ongoing">Categories</p>
+                <!-- <p class="see-all point">See All</p> -->
+                
+            </div>
+    
+            <div class="top-search">
+               
+                <div class="button-list gap">
+                        <div class="search-category point" *ngFor="let eachCategory of courseCategories;index as i">
+                          <span class="image-div1">
+                            <img [src]="categoryImage[i]" alt="">
+                          </span>
+                          <span class="category-text margin-left">{{eachCategory}}</span>
+                        </div>
+                </div>
+            </div>
         </div>
-
-        <div class="top-search">
-           
-            <div class="button-list gap">
-                <div class="category-data" *ngFor="let eachCategory of courseCategories;index as i">
-            
-                    <div class="search-category point" *ngIf="eachCategory === 'Design'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
-                      </span>
-                      <span>Design</span>
+    
+        <!-- Choice your course -->
+        <div class="choice-your-course">
+            <div class="course-name-see-all">
+                <p class="ongoing">Choice your course</p>
+                <p class="see-all point" (click)="seeAllData('choice')">See All</p>
+                
+            </div>
+            <div class="navbar">
+                <p class="navbar-option point" [class.nav-active]="(choice_course == 'All' || choice_course == null)" (click)="choiceYourCourse('All')">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</p>
+                <p class="navbar-option point" [class.nav-active]="(choice_course == 'Popular')" (click)="choiceYourCourse('Popular')">Popular</p>
+                <p class="navbar-option point" [class.nav-active]="(choice_course == 'Newest')" (click)="choiceYourCourse('Newest')">Newest</p>
+            </div>
+           <div class="categories-list">
+            <div class="choice-course">
+                <mat-card class="each-choice-course" *ngFor="let choice of choiceCourse;index as i">
+                    <div class="image-div images">
+                        <div class="image-course-type">
+                            <img [src]="choice.courseImage" alt="">
+                        <div class="course-type">{{choice.category}}</div>
+                        </div>
                     </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Development'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
-                      </span>
-                     <span> Development</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Business'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
-                      </span>
-                      <span>Business</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Finance'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
-                      </span>
-                      <span>Finance</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Health & Fitness'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
-                      </span>
-                     <span>Health&nbsp;&&nbsp;Fitness</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Music'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
-                      </span>
-                      <span>Music</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'IT & Software'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
-                      </span>
-                      <span>IT&nbsp;&&nbsp;Software</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Marketing'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
-                      </span>
-                      <span>Marketing</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Lifestyle'">
-                      <span class="image-div1">
-                        <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
-                      </span>
-                      <span>Lifestyle</span>
-                    </div>
-                    <div class="search-category point lessPadding" *ngIf="eachCategory === 'Photography'">
-                      <span class="image-div1 less-size">
-                        <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
-                      </span>
-                      <span>Photography</span>
-                    </div>
-                    <div class="search-category point" *ngIf="eachCategory === 'Teaching'">
-                      <span class="image-div1 less-size">
-                        <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
-                      </span>
-                      <span>Teaching</span>
-                    </div>
+                    <p class="see-all each-course-name">{{choice.courseTitle}}</p>
                    
-                  </div>
+                    <p class="see-all each-course-chapter chap-size">{{choice.courseContent.totalChapters}}&nbsp;Chapters</p>
+                </mat-card>
             </div>
-          </div>
+           </div>
+        </div>
+    
+        <!-- Top course in business -->
+        <div class="choice-your-course">
+            <div class="course-name-see-all">
+                <p class="ongoing">Top courses in Business</p>
+                <p class="see-all point" (click)="seeAllData('business')">See All</p>
+                
+            </div>
+            <div class="categories-list">
+                <div class="choice-course">
+                    <mat-card class="each-choice-course" *ngFor="let topBusiness of topBusinessCourse;index as i">
+                        <div class="image-course-type each-video-course">
+                            <img [src]="topBusiness.courseImage" alt="" *ngIf="display_video_id != topBusiness._id">
+                            <div class="play-button point" (click)="displayVideo(topBusiness._id)" *ngIf="display_video_id != topBusiness._id">
+                                <img src="../../assets/images/play.png" alt="">
+                            </div>
+                            <video [src]="topBusiness.videoLink" controls class="vidio-size" type="video/mp3" *ngIf="display_video_id == topBusiness._id"></video>
+                           
+                        </div>
+                        
+                        <p class="see-all each-course-name">{{topBusiness.courseTitle}}</p>
+                        <div class="chapter-clock">
+                            <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;Chapters</p>
+                        <p class="see-all each-course-chapter margin chap-size"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;{{topBusiness.courseContent.totalDuration | duration}}</p>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Top course in design -->
+        <div class="choice-your-course">
+            <div class="course-name-see-all">
+                <p class="ongoing">Top courses in Design</p>
+                <p class="see-all point" (click)="seeAllData('design')">See All</p>
+                
+            </div>
+            <div class="choice-course">
+                <mat-card class="each-choice-course" *ngFor="let topBusiness of topWebCourse;index as i">
+                    <div class="image-course-type each-video-course">
+                        <img [src]="topBusiness.courseImage" alt="" *ngIf="display_video_id != topBusiness._id">
+                        <div class="play-button point" (click)="displayVideo(topBusiness._id)" *ngIf="display_video_id != topBusiness._id">
+                            <img src="../../assets/images/play.png" alt="">
+                        </div>
+                        <video [src]="topBusiness.videoLink" controls class="vidio-size" type="video/mp3" *ngIf="display_video_id == topBusiness._id"></video>
+                       
+                    </div>
+                    
+                   <div class="details-data">
+                    <p class="see-all each-course-name">{{topBusiness.courseTitle}}</p>
+                    <div class="chapter-clock">
+                        <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;Chapters</p>
+                    <p class="see-all each-course-chapter margin chap-size"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;{{topBusiness.courseContent.totalDuration | duration}}</p>
+                   </div>
+                    </div>
+                </mat-card>
+               
+            </div>
+        </div>
+    
     </div>
-
-    <!-- Choice your course -->
-    <!-- <div class="choice-your-course">
-        <div class="course-name-see-all">
-            <p class="ongoing">Choice your course</p>
-            <p class="see-all point">See All</p>
-            
-        </div>
-        <div class="navbar">
-            <p class="navbar-option point" [class.nav-active]="(choice_course == 'All' || choice_course == null)" (click)="choiceYourCourse('All')">&nbsp;&nbsp;&nbsp;All&nbsp;&nbsp;&nbsp;</p>
-            <p class="navbar-option point" [class.nav-active]="(choice_course == 'Popular')" (click)="choiceYourCourse('Popular')">Popular</p>
-            <p class="navbar-option point" [class.nav-active]="(choice_course == 'Newest')" (click)="choiceYourCourse('Newest')">Newest</p>
-        </div>
-       <div class="categories-list">
-        <div class="choice-course">
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <div class="image-course-type">
-                        <img src="../../assets/images/banner-42 1.png" alt="">
-                    <div class="course-type">Design</div>
-                    </div>
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
-                <p class="see-all each-course-name">-</p>
-                <p class="see-all each-course-chapter">7&nbsp;Chapters</p>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <div class="image-course-type">
-                        <img src="../../assets/images/banner-42 1.png" alt="">
-                    <div class="course-type">Design</div>
-                    </div>
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
-                <p class="see-all each-course-name">-</p>
-                <p class="see-all each-course-chapter">7&nbsp;Chapters</p>
-            </mat-card>
-           
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <div class="image-course-type">
-                        <img src="../../assets/images/banner-42 1.png" alt="">
-                    <div class="course-type">Design</div>
-                    </div>
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
-                <p class="see-all each-course-name">-</p>
-                <p class="see-all each-course-chapter">7&nbsp;Chapters</p>
-            </mat-card>
-           
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <div class="image-course-type">
-                        <img src="../../assets/images/banner-42 1.png" alt="">
-                    <div class="course-type">Design</div>
-                    </div>
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design</p>
-                <p class="see-all each-course-name">-</p>
-                <p class="see-all each-course-chapter">7&nbsp;Chapters</p>
-            </mat-card>
-           
-           
-        </div>
-       </div>
-    </div> -->
-
-    <!-- Top course in business -->
-    <!-- <div class="choice-your-course">
-        <div class="course-name-see-all">
-            <p class="ongoing">Top courses in Business</p>
-            <p class="see-all point">See All</p>
-            
-        </div>
-        <div class="choice-course">
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-        </div>
-    </div> -->
-
-    <!-- Top course in design -->
-    <!-- <div class="choice-your-course">
-        <div class="course-name-see-all">
-            <p class="ongoing">Top courses in Design</p>
-            <p class="see-all point">See All</p>
-            
-        </div>
-        <div class="choice-course">
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-            <mat-card class="each-choice-course">
-                <div class="image-div images">
-                    <img src="../../assets/images/banner-42 1.png" alt="">
-                </div>
-                <p class="see-all each-course-name">Learn Figma - UI/UX Design Essential Training</p>
-                <div class="chapter-clock">
-                    <p class="see-all each-course-chapter margin">7&nbsp;Chapters</p>
-                <p class="see-all each-course-chapter margin"><img src="../../assets/images/clock.png"  width="20%"  alt="">&nbsp;1:40:32</p>
-                </div>
-            </mat-card>
-        </div>
-    </div> -->
 </div>
