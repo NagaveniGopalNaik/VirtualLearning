@@ -1,0 +1,26 @@
+.nav-roots{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5%;
+}
+
+.nav-root{
+    font-family: Biko;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #7A7A7A;
+    font-weight: 200;
+    padding: 0.5% 0;
+    
+}
+.nav-root-highlight{
+    color:#2BB5F4;
+}
+.increase-icon-size{
+    font-size: 2.4rem;
+    /* line-height: 3.8rem; */
+    
+   
+    
+}

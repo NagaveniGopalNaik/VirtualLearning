@@ -1,0 +1,5 @@
+<div class="nav-roots" *ngIf="display==true">
+    <p class="nav-root nav-root-highlight point" routerLink="/my-course">My course</p>
+<p class="nav-root nav-root-highlight increase-icon-size" *ngIf="currentRoute !='/my-course'"> > </p>
+<p class="nav-root" *ngIf="currentRoute !='/my-course'">Ongoing</p>
+</div>

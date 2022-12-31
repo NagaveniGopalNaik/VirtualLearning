@@ -1,16 +1,16 @@
-.header{
+/* .header{
     position: fixed;
     width: 100%;
     z-index: 1;
     top: 0;
-}
+} */
 
 .my-course-container{
     width: 80%;
     margin: auto;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     overflow-y: auto;
-    margin-top: 10vh;
+    /* margin-top: 5.9em; */
    
 }
 .viewCertificate{

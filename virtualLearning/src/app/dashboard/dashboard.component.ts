@@ -21,19 +21,7 @@ topWebCourse:any;
 
 display_video_id:any;
 
-categoryImage=[
-  "../../assets/images/icn_categories suggestion_business@1.5x.svg",
- "../../assets/images/icn_categories suggestion_design@1.5x.svg",
- "../../assets/images/icn_categories suggestion_fitness@1.5x.svg",
- "../../assets/images/icn_categories suggestion_IT@1.5x.svg",
- "../../assets/images/icn_categories suggestion_marketing@1.5x.svg",
- "../../assets/images/icn_categories suggestion_music@1.5x.svg",
- "../../assets/images/icn_categories suggestion_photography@1.5x.svg",
- "../../assets/images/icn_categories suggestion_teaching@1.5x.svg",
- "../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg",
- "../../assets/images/icn_categories suggestion_code@1.5x.svg",
-  
-]
+categoryImage=this.dashboardService.categoryList;
 
   constructor(private dashboardService:DashboardService,private router:Router) { }
 

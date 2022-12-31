@@ -1,33 +1,131 @@
-<mat-card class="header-body">
-  <div class="header-part">
+{{getCourse()}}
+
+<mat-card class="header-body" [class.header-body1]="searchOk == true">
+  <div class="header-part" [class.header-part1]="searchOk == true">
     <!-- <div class="logo-search"> -->
       <div class="image">
         <img src="../../assets/images/Group 118.png" alt="" class="img point" routerLink="/dashboard"/>
       </div>
-      <div class="search-part-div">
-        <div class="search" [class.flexReverse]="searchOk == true">
-          <mat-icon class="search-icon" (click)="searchKey()">search</mat-icon>
-          <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
-          <input
-            type="text"
-            placeholder="Search"
-            (click)="searchCourse()"
-            [(ngModel)]="searchKeyData"
-            (keyup)="searchKey()"
-          />
+      <div class="search-category-data">
+        <div class="search-part-div" [class.search-part-div1]="searchOk == true">
+          <div class="search" [class.flexReverse]="searchOk == true">
+            <mat-icon class="search-icon" (click)="searchKey()" [class.background]="searchOk == true">search</mat-icon>
+            <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
+            <input
+              type="text"
+              placeholder="Search"
+              (click)="searchCourse()"
+              [(ngModel)]="searchKeyData"
+              (keyup)="searchKey()"
+            />
+            
+          </div>
+          <div class="filter point size" [class.search-ok]="searchOk == true" (click)="filter_course()">
+            
+              <img
+              src="../../assets/images/Mask_Group_9 Clipped.png"
+              alt=""
+             
+            />
+            
+          </div>
+  
           
         </div>
-        <div class="filter point" [class.search-ok]="searchOk == true" (click)="filter_course()">
-          
-            <img
-            src="../../assets/images/Mask_Group_9 Clipped.png"
-            alt=""
-            width="70%"
-            height="70%"
-          />
-          
+        <div class="search-part"   [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
+          <div class="top-search" *ngIf="nodata == false">
+            <p class="search-head">Top Search</p>
+            <div class="button-list gap">
+              <div class="search-category point"  [class.active]="search == active" (click)="searchCatogary(search)" *ngFor="let search of topSearchService;index as i">{{search}}</div>
+              
+            </div>
+          </div>
+          <div class="top-search" *ngIf="nodata == true">
+            <p class="no-data">No matching course</p>
+            <p class="sub-no-data">Try a different search or browse categories</p>
+          </div>
+          <div class="top-search">
+            <p class="search-head">Search from Categories</p>
+            <div class="button-list gap">
+              
+              <div class="button-list gap">
+                <div class="search-category point" [class.active]="eachCategory == active" *ngFor="let eachCategory of categoryData;index as i" (click)="searchCatogary(eachCategory)">
+                  <span class="image-div1">
+                    <img [src]="searchCategoryImage[i]" alt="">
+                  </span>
+                  <span class="category-text margin-left">{{eachCategory}}</span>
+                </div>
         </div>
+             
+             
+            </div>
+          </div>
+        </div>
+        <div class="search-data" *ngIf="searchOption == false">
+          <div class="search-datas" (click)="gotoCourseDetails()" *ngFor="let searchData of searchCourseDetails;index as i">
+              <div class="image-details">
+                  <div class="course-image">
+                      <img [src]="searchData.courseImage" alt="" width="70em" height="70em" class="courseImage">
+               <div class="courseDetails">
+                   <p class="courseName">{{searchData.courseTitle}}</p>
+                   <p class="chapterCount">{{searchData.courseContent.totalChapters}} Chapter</p>
+                   <button class="course-button">{{searchData.category}}</button>
+               </div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="search-datas" (click)="gotoCourseDetails()">
+            <div class="image-details">
+                <div class="course-image">
+                    <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
+             <div class="courseDetails">
+                 <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+                 <p class="chapterCount">14 Chapter</p>
+                 <button class="course-button">Design</button>
+             </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-datas" (click)="gotoCourseDetails()">
+            <div class="image-details">
+                <div class="course-image">
+                    <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
+             <div class="courseDetails">
+                 <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+                 <p class="chapterCount">14 Chapter</p>
+                 <button class="course-button">Design</button>
+             </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-datas" (click)="gotoCourseDetails()">
+            <div class="image-details">
+                <div class="course-image">
+                    <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
+             <div class="courseDetails">
+                 <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+                 <p class="chapterCount">14 Chapter</p>
+                 <button class="course-button">Design</button>
+             </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-datas" (click)="gotoCourseDetails()">
+            <div class="image-details">
+                <div class="course-image">
+                    <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
+             <div class="courseDetails">
+                 <p class="courseName">Digital Marketing for 2021 Masterclass</p>
+                 <p class="chapterCount">14 Chapter</p>
+                 <button class="course-button">Design</button>
+             </div>
+                </div>
+            </div>
+        </div> -->
+          </div>
       </div>
+
+      
     <!-- </div> -->
     <div class="profile-notification" [class.close]="searchOk == true">
       <div class="notification-image">
@@ -56,162 +154,8 @@
       <mat-icon class="color" (click)="closeSearch()">close</mat-icon>
     </div>
   </div>
-  <div class="search-part" [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
-    <div class="top-search">
-      <p class="search-head">Top Search</p>
-      <div class="button-list">
-        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Java')">Java</button>
-        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Angular')">Angular</button>
-        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('JavaScript')">JavaScript</button>
-        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Designing')">Designing</button>
-        <button mat-raised-button class="top-search-button margin-top" (click)="searchCatogary('Data analyst')">
-          Data analyst
-        </button>
-        <button mat-raised-button class="top-search-button" (click)="searchCatogary('Backend course')">
-          Backend course
-        </button>
-      </div>
-    </div>
-    <div class="top-search" *ngIf="false">
-      <p class="no-data">No matching course</p>
-      <p class="sub-no-data">Try a different search or browse categories</p>
-    </div>
-    <div class="top-search">
-      <p class="search-head">Search from Categories</p>
-      <div class="button-list gap">
-        
-        <div class="search-category point" (click)="searchCatogary('Design')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
-          </span>
-          Design
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Development')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
-          </span>
-          Development
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Business')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_business@1.5x.svg" alt="">
-          </span>
-          Business
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Finance')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_finance@1.5x.svg" alt="">
-          </span>
-          Finance
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Health & Fitness')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_fitness@1.5x.svg" alt="">
-          </span>
-         <span>Health&nbsp;&&nbsp;Fitness</span>
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Music')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_music@1.5x.svg" alt="">
-          </span>
-          Music
-        </div>
-        <div class="search-category point" (click)="searchCatogary('IT & Software')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_IT@1.5x.svg" alt="">
-          </span>
-          IT&nbsp;&&nbsp;Software
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Marketing')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_marketing@1.5x.svg" alt="">
-          </span>
-          Marketing
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Lifestyle')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg" alt="">
-          </span>
-          Lifestyle
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Photography')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_photography@1.5x.svg" alt="">
-          </span>
-          Photography
-        </div>
-        <div class="search-category point" (click)="searchCatogary('Teaching')">
-          <span class="image-div">
-            <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
-          </span>
-          Teaching
-        </div>
-       
-      </div>
-    </div>
-  </div>
-  <div class="search-data" *ngIf="searchOption == false">
-  <div class="search-datas" (click)="gotoCourseDetails()">
-      <div class="image-details">
-          <div class="course-image">
-              <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
-       <div class="courseDetails">
-           <p class="courseName">Digital Marketing for 2021 Masterclass</p>
-           <p class="chapterCount">14 Chapter</p>
-           <button class="course-button">Design</button>
-       </div>
-          </div>
-      </div>
-  </div>
-  <div class="search-datas" (click)="gotoCourseDetails()">
-    <div class="image-details">
-        <div class="course-image">
-            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
-     <div class="courseDetails">
-         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
-         <p class="chapterCount">14 Chapter</p>
-         <button class="course-button">Design</button>
-     </div>
-        </div>
-    </div>
-</div>
-<div class="search-datas" (click)="gotoCourseDetails()">
-    <div class="image-details">
-        <div class="course-image">
-            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
-     <div class="courseDetails">
-         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
-         <p class="chapterCount">14 Chapter</p>
-         <button class="course-button">Design</button>
-     </div>
-        </div>
-    </div>
-</div>
-<div class="search-datas" (click)="gotoCourseDetails()">
-    <div class="image-details">
-        <div class="course-image">
-            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
-     <div class="courseDetails">
-         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
-         <p class="chapterCount">14 Chapter</p>
-         <button class="course-button">Design</button>
-     </div>
-        </div>
-    </div>
-</div>
-<div class="search-datas" (click)="gotoCourseDetails()">
-    <div class="image-details">
-        <div class="course-image">
-            <img [src]="image" alt="" width="70em" height="70em" class="courseImage">
-     <div class="courseDetails">
-         <p class="courseName">Digital Marketing for 2021 Masterclass</p>
-         <p class="chapterCount">14 Chapter</p>
-         <button class="course-button">Design</button>
-     </div>
-        </div>
-    </div>
-</div>
-  </div>
+  
+  
 </mat-card>
 <mat-card class="dropdown" [class.click-setting]="display_dropdown == true">
   <div class="option border" (click)="myCourse()">
@@ -228,7 +172,7 @@
   </div>
 </mat-card>
 
-<div class="mobile-screen-header">
+<div class="mobile-screen-header" *ngIf ="currentRoute != '/my-course'">
   <img src="../../assets/images/icn_hamburgermenu@1.5x.svg" alt="" class="image" (click)="gotoMenu()">
   <mat-icon class="search-icon" (click)="gotoSearch()">search</mat-icon>
 </div>

@@ -11,14 +11,14 @@
     <div class="top-search">
         <p class="search-head">Search from Categories</p>
         <div class="button-list gap">
-        
-          <div class="search-category margin-top point" (click)="selectCourse('Design')" [class.backgroundColor]="course == 'Design'">
+        <!--  [class.backgroundColor]="course == 'Design'" -->
+          <div class="search-category margin-top point" [class.backgroundColor]="course.includes(category)" *ngFor="let category of categoryData;index as i" (click)="selectCourse(category)">
             <span class="image-div">
-              <img src="../../assets/images/icn_categories suggestion_design@1.5x.svg" alt="">
+              <img [src]="image[i]" alt="">
             </span>
-            Design
+            {{category}}
           </div>
-          <div class="search-category margin-top point" (click)="selectCourse('Development')" [class.backgroundColor]="course == 'Development'">
+          <!-- <div class="search-category margin-top point" (click)="selectCourse('Development')" [class.backgroundColor]="course == 'Development'">
             <span class="image-div">
               <img src="../../assets/images/icn_categories suggestion_code@1.5x.svg" alt="">
             </span>
@@ -77,30 +77,30 @@
               <img src="../../assets/images/icn_categories suggestion_teaching@1.5x.svg" alt="">
             </span>
             Teaching
-          </div>
+          </div> -->
          
-        </div>
+        <!-- </div> -->
       </div>
       <div class="top-search margin-top">
           <p class="search-head">Duration</p>
           <div class="button-list">
-            <div class="search-category point padding" (click)="selectDuration('5/10 Chapters')" [class.backgroundColor]="duration == '5/10 Chapters'">
+            <div class="search-category point padding" (click)="selectDuration([5,10],0)" [class.backgroundColor]="index.includes(0)">
              
               5/10 Chapters
             </div>
-            <div class="search-category point padding" (click)="selectDuration('10/20 Chapters')" [class.backgroundColor]="duration == '10/20 Chapters'">
+            <div class="search-category point padding" (click)="selectDuration([10,20],1)" [class.backgroundColor]="index.includes(1)">
              
               10/20 Chapters
             </div>
-            <div class="search-category point padding" (click)="selectDuration('20/30 Chapters')" [class.backgroundColor]="duration == '20/30 Chapters'">
+            <div class="search-category point padding" (click)="selectDuration([20,30],2)" [class.backgroundColor]="index.includes(2)">
              
               20/30 Chapters
             </div>
-            <div class="search-category point padding" (click)="selectDuration('30/40 Chapters')" [class.backgroundColor]="duration == '30/40 Chapters'">
+            <div class="search-category point padding" (click)="selectDuration([30,40],3)" [class.backgroundColor]="index.includes(3)">
              
               30/40 Chapters
             </div>
-            <div class="search-category point padding" (click)="selectDuration('50+ Chapters')" [class.backgroundColor]="duration == '50+ Chapters'">
+            <div class="search-category point padding" (click)="selectDuration([50],4)" [class.backgroundColor]="index.includes(4)">
              
               50+ Chapters
             </div>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="filter-submit">
-        <button mat-raised-button class="filter" mat-dialog-close>Apply Filter</button>
+        <button mat-raised-button class="filter" (click)="filterCourse()" mat-dialog-close>Apply Filter</button>
         <button mat-raised-button (click)="clearSelectData()">Clear All</button>
       </div>
 </div>

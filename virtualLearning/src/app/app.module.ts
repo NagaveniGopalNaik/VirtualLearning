@@ -17,6 +17,7 @@ import { MyCourseComponent } from './my-course/my-course.component';
 import { CustomInterceptor } from './custom.interceptor';
 import { DurationPipe } from './duration.pipe';
 import { SearchComponent } from './search/search.component';
+import { CourseNavigationComponent } from './course-navigation/course-navigation.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SearchComponent } from './search/search.component';
     CourseDetailsComponent,
     MyCourseComponent,
     DurationPipe,
-    SearchComponent
+    SearchComponent,
+    CourseNavigationComponent
   ],
   imports: [
     BrowserModule,

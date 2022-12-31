@@ -7,7 +7,19 @@ const base_url = environment.API_URL;
   providedIn: 'root'
 })
 export class DashboardService {
-
+categoryList = [
+  "../../assets/images/icn_categories suggestion_business@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_design@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_fitness@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_IT@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_marketing@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_music@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_photography@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_teaching@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_lifestyle@1.5x.svg",
+ "../../assets/images/icn_categories suggestion_code@1.5x.svg",
+  
+]
   constructor(private http:HttpClient) { }
 
   getUserFullName(){

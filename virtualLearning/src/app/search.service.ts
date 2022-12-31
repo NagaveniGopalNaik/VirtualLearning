@@ -12,4 +12,18 @@ export class SearchService {
   getTopSearch(){
     return this.http.get(`${base_url}topSearches`);
   }
+
+  searchCourse(body:any){
+    return this.http.post(`${base_url}searchCourse`,body);
+  }
+
+  searchByCategory(body:any){
+    return this.http.post(`${base_url}searchByCategory`,body);
+  }
+
+  filter(body:any){
+    return this.http.post(`${base_url}filter`,body);
+  }
+
+  // searchByCategory
 }

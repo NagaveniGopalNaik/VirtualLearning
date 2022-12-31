@@ -1,12 +1,9 @@
-<div class="header" *ngIf="mobile_video_display == false">
+<!-- <div class="header" *ngIf="mobile_video_display == false">
     <app-header></app-header>
-</div>
+</div> -->
 <div class="course-details-container" *ngIf="mobile_video_display == false">
-<div class="nav-roots">
-    <p class="nav-root nav-root-highlight point" routerLink="/my-course">My course</p>
-<p class="nav-root nav-root-highlight increase-icon-size"> > </p>
-<p class="nav-root">Ongoing</p>
-</div>
+    <app-course-navigation></app-course-navigation>
+
 <div class="course-details-body">
     <div class="video-part">
 <div class="video-play point" (click)="playVideo()"  >
