@@ -55,18 +55,28 @@ index:any[]=[];
     })
   }
 
+  matClose(){
+    sessionStorage.removeItem('search-course');
+    sessionStorage.setItem('close-dialog','true');
+  }
+
   filterCourse(){
     let data = {
       "categories":this.course,
       "totalDuration":this.duration
     }
-    this.search.filter(data).subscribe({
-      next:(data)=>{
-        console.log(data);
-        sessionStorage.setItem('search-course',JSON.stringify(data));
-        
-      }
-    })
+    if(this.course.length > 0 && this.duration.length > 0){
+      this.search.filter(data).subscribe({
+        next:(data)=>{
+          console.log(data);
+          sessionStorage.setItem('search-course',JSON.stringify(data));
+          sessionStorage.setItem('close-dialog','true');
+          
+        }
+      })
+    } else {
+      alert('Please select at least one category and duration')
+    }
     
   }
 

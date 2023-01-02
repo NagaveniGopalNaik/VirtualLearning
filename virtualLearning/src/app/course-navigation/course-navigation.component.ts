@@ -10,7 +10,8 @@ export class CourseNavigationComponent implements OnInit {
 currentRoute:any;
 innerWidth: any;
 display=true;
-
+active:any;
+chapterName:any;
 @HostListener('window:resize', ['$event'])
 onResize(event:any) {
   this.innerWidth = window.innerWidth;
@@ -35,6 +36,11 @@ this.display = false;
     }
 
   ngOnInit(): void {
+  }
+
+  activeChapter(){
+    this.active = sessionStorage.getItem('chapter-navigation') || 'false';
+    this.chapterName = sessionStorage.getItem('course-name') as any;
   }
 
 }

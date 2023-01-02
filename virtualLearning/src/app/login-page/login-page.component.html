@@ -8,9 +8,10 @@
             Sync rosters, create and assign impactful video experiences, enrich your flipped classroom, and streamline tedious grading.
         </p>
         <div class="pagination">
-            <span class="dot">.</span>
-            <span class="dot">.</span>
-            <span class="dash">_</span>
+            <span class="div dot"></span>
+            <span class="div dot"></span>
+            <!-- <span class="dash">_</span> -->
+            <span class="div"></span>
         </div>
     </div>
     <div class="login-part">
@@ -24,11 +25,15 @@
         Easy to learn anytime and anywhere. Login to your account
        </p>
        <div class="social-button">
-           <button class="button  facebook">
-               <img src="../../assets/images/facebook.png" alt="" class="social-image">
+           <button class="button">
+               <div class="image-div">
+                <img src="../../assets/images/facebook.png" alt="" class="social-image">
+               </div>
            </button>
            <button class="button">
-               <img src="../../assets/images/google.png" alt="" class="social-image">
+               <div class="image-div">
+                <img src="../../assets/images/google.png" alt="" class="social-image">
+               </div>
            </button>
        </div>
 
@@ -48,7 +53,7 @@
                </div>
                
 
-               <button (click)="login()">Login</button>
+               <button class="login" (click)="login()">Login</button>
            </form>
        </div>
        <p class="register-text">

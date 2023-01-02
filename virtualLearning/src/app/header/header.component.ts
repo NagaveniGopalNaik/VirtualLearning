@@ -27,12 +27,13 @@ image = "../../assets/images/illustration-in-UI.png";
 searchCategoryImage:any;
 categoryData:any;
 active:any
-
+filter_active = false;
 innerWidth:any;
 display=true;
 currentRoute:any;
-
+dialogRef:any;
 searchCourseDetails:any;
+categorySelect = false;
   @HostListener('window:resize', ['$event'])
 onResize(event:any) {
   
@@ -81,17 +82,19 @@ this.display_dropdown =true;
     this.clearData();
   }
 
-getCourse(){
- if(sessionStorage.getItem('search-course')){
-  this.searchCourseDetails = JSON.parse(sessionStorage.getItem('search-course') as any);
+// getCourse(){
+//  if(sessionStorage.getItem('search-course')){
+//   this.searchCourseDetails = JSON.parse(sessionStorage.getItem('search-course') as any);
  
- }
+//  }
   
-}
-
-  searchKey(){
-   
-    
+// }
+// update(){
+//   sessionStorage.setItem('update','true');
+// }
+searchKey(){
+  
+  this.filter_active = false;
     this.searchCourseDetails = [];
   
 let data = {
@@ -105,7 +108,7 @@ if(this.searchKeyData != ""){
   this.searchService.searchCourse(data).subscribe({
     next:(data)=>{
       sessionStorage.setItem('search-course',JSON.stringify(data));
-      // this.searchCourseDetails = data;
+      this.searchCourseDetails = data;
       console.log(this.searchCourseDetails);
       if(this.searchCourseDetails.length < 1){
         this.searchOption = true;
@@ -128,11 +131,18 @@ if(this.searchKeyData != ""){
     this.searchCancel = false;
 }
 
- 
+if(this.searchKeyData == '' && this.filter_active == false && this.categorySelect == false){
+  this.nodata = false;
+  
+  
+}
     
 
   }
   searchCatogary(data:any){
+    this.categorySelect = true;
+    this.filter_active = false;
+    this.searchCourseDetails = [];
 this.searchKeyData = data;
 this.searchOption = false;
     this.searchCancel = true;
@@ -143,8 +153,13 @@ this.searchOption = false;
     // if(this.searchKeyData != ""){
       this.searchService.searchByCategory(data).subscribe({
         next:(data)=>{
-          // this.searchCourseDetails = data;
+          this.searchCourseDetails = data;
           sessionStorage.setItem('search-course',JSON.stringify(data));
+          if(this.searchCourseDetails.length < 1){
+            this.searchOption = true;
+            this.nodata = true;
+            this.searchCancel = true;
+          }
         }
       })
     // }
@@ -155,22 +170,65 @@ clearData(){
   this.searchKeyData='';
   this.searchOption = true;
   this.searchCancel = false;
+  this.categorySelect = false;
+  this.nodata = false;
+  // this.searchCourseDetails = [];
+}
+closeDialog(){
+  if(sessionStorage.getItem('close-dialog')){
+    let close = sessionStorage.getItem('close-dialog');
+    if(close == 'true'){
+this.dialogRef.close();
+sessionStorage.setItem('close-dialog','false');
+    }
+  }
 }
 
 filter_course(){
-  let dialogRef=this.dialog.open(CourseFilterComponent,{panelClass:'course-filter'});
-  dialogRef.afterClosed();
-  if(dialogRef.afterClosed()){
-    let data = JSON.parse(sessionStorage.getItem('search-course') as any);
-    if(data.length < 0){
-      this.searchOption = true;
-      this.searchCancel = false;
-      this.nodata = true;
-      console.log(this.nodata);
-      
-    }
+  this.filter_active = true;
+ 
+  this.dialogRef=this.dialog.open(CourseFilterComponent,{panelClass:'course-filter'});
 
-  }
+  this.dialogRef.afterClosed().subscribe(()=>{
+    if(sessionStorage.getItem('search-course')){
+      let data = JSON.parse(sessionStorage.getItem('search-course') as any);
+      console.log(data);
+      
+      this.searchCourseDetails = data;
+     console.log(this.searchCourseDetails);
+     
+      if(this.searchCourseDetails.length < 1){
+       
+        this.nodata = true;
+        this.searchOption = true;
+        this.searchCancel = true;
+        
+      } else {
+        this.searchOption = false;
+        this.searchCancel = true;
+        this.nodata = false;
+       
+      }
+    } else {
+      this.searchOption = true;
+        this.searchCancel = true;
+        this.nodata = false;
+    }
+    
+
+    
+  });
+  // if(dialogRef.afterClosed()){
+  //   let data = JSON.parse(sessionStorage.getItem('search-course') as any);
+  //   if(data.length < 0){
+  //     this.searchOption = true;
+  //     this.searchCancel = false;
+  //     this.nodata = true;
+  //     console.log(this.nodata);
+      
+  //   }
+
+  // }
     
   
 }
@@ -189,7 +247,17 @@ closeSearchs(){
   this.search_view = false;
 }
 
-gotoCourseDetails(){
+gotoCourseDetails(course:any){
+  let courseId =course._id;
+  let courseName:any;
+  if(this.filter_active == true){
+    courseName = course.title;
+  } else {
+    courseName = course.courseTitle;
+  }
+  sessionStorage.setItem('course-id',courseId);
+  sessionStorage.setItem('course-name',courseName);
+  sessionStorage.setItem('update','true');
   this.closeSearch();
   this.router.navigate(['/course-details']);
 }
@@ -235,4 +303,10 @@ getCourseCategoryData(){
   })
 }
 
+
+// backtoData(){
+//   if(this.searchKeyData == ''){
+//     this.nodata = false;
+//   }
+// }
 }

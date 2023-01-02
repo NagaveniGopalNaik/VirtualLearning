@@ -1,6 +1,8 @@
 <!-- <div class="header" *ngIf="mobile_video_display == false">
     <app-header></app-header>
 </div> -->
+
+{{courseTitleData()}}
 <div class="course-details-container" *ngIf="mobile_video_display == false">
     <app-course-navigation></app-course-navigation>
 
@@ -12,32 +14,32 @@
         <img src="../../assets/images/icn_close_white@1.5x.svg" alt="" class="point" routerLink="/dashboard">
     </mat-icon>
     <img src="../../assets/images/Yellow Play.svg" alt="play button" class="play-button point" *ngIf="display_name==true">
-    <video src="../../assets/pexels-polina-kovaleva-8035714.mp4" class="vidio-size" controls type="video/mp3" width="80%" height="30%"></video>
+    <video [src]="courseDetails.courseOverview.overViewId.previewThisCourse.videoLink" class="vidio-size" controls type="video/mp3" width="80%" height="30%"></video>
     <div class="course-image-div">
         <img src="../../assets/images/img_designcoursedetail1_bg@1.5x.svg" alt="">
         <div class="course-name-category courseCategory">
-            <p class="name">Learn Figma - UI/UX Design Essential Training</p>
+            <p class="name">{{courseTitle}}</p>
             <div class="name-dur">
                 <div class="category">
-                    Design
+                    {{courseDetails.courseOverview.category}}
                 </div>
-                <p class="dur">7 Chapter | 46 lessons</p>
+                <p class="dur">{{courseDetails.courseOverview.courseContent.totalChapters}} Chapter | {{courseDetails.courseOverview.courseContent.totalLessons}} lessons</p>
             </div>
             
         </div>
     </div>
 <div class="course-name-duration" *ngIf="display_name==true">
     <p class="chap-name">Introduction</p>
-    <p class="duration-chap" *ngIf="course_details_active == true">3 min</p>
+    <p class="duration-chap" *ngIf="course_details_active == true">{{courseDetails.courseOverview.overViewId.previewThisCourse.videoDuration | durationPipe}}</p>
 </div>
 </div>
 <div class="course-name-category">
     <div class="name-dur">
-        <p class="name">Learn Figma - UI/UX Design Essential Training</p>
-        <p class="dur">7 Chapter | 46 lessons</p>
+        <p class="name">{{courseTitle}}</p>
+        <p class="dur">{{courseDetails.courseOverview.courseContent.totalChapters}} Chapter | {{courseDetails.courseOverview.courseContent.totalLessons}} lessons</p>
     </div>
     <div class="category">
-        Design
+        {{courseDetails.courseOverview.category}}
     </div>
 </div>
 
@@ -47,7 +49,7 @@
     <p [class.details-active]="course_details_active == false" (click)="courseDetailsChapter()">Chapters</p>
 </div>
 <p class="nav-root nav-root-highlight font-size" *ngIf="course_details_active == true">
-    Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach. Learn how to design a beautiful and engaging mobile app with Figma. Learn-by-doing approach.
+    {{courseDetails.courseOverview.overViewId.description}}
 </p>
 
 <!-- Video part -->
@@ -73,7 +75,7 @@
 </div>
 
 
-<p class="nav-root black-color font-size black" *ngIf="course_details_active == true">Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs. Figma is similar to Sketch and Adobe XD but is the more powerful of the three when it comes. Figma is a very powerful application that runs online. There are virtually no platform boundaries when it comes to using figma because you can design within a web browser or using their desktop application made for windows and macs <span class="show-more">Show more</span></p>
+<p class="nav-root black-color font-size black" *ngIf="course_details_active == true">{{courseDetails.courseOverview.overViewId.previewThisCourse.description}}<span class="show-more">Show more</span></p>
     </div>
 
     <!-- Course details part -->
@@ -119,7 +121,7 @@
         </div>
         <div class="course-includes">
             <div class="image">
-                <img src="../../assets/images/overview/Shape (2).png" alt="" class="icon" width="80%">
+                <img src="../../assets/images/overview/Shape (2).png" alt="" class="icon" width="90%">
             </div>
            
                <p class="nav-root margin font-size">Access on mobile, desktop and tv</p>
@@ -134,13 +136,13 @@
             
         </div>
         <p class="course-d-head margin-top">What you’ll learn</p>
-      <div class="will-learn">
+      <div class="will-learn" *ngFor="let learn of courseDetails.courseOverview.overViewId.whatYouWillLearn;">
           <div class="image1">
             <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
           </div>
-          <p class="nav-root black-color margin">Design Websites</p>
+          <p class="nav-root margin opacity black">{{learn}}</p>
       </div>
-      <div class="will-learn">
+      <!-- <div class="will-learn">
         <div class="image1">
           <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
         </div>
@@ -157,26 +159,24 @@
           <img src="../../assets/images/overview/Combined-Shape.png" alt="" class="icon">
         </div>
         <p class="nav-root black-color margin font-size color-change">You will learn how to reuse design elements for future projects</p>
-    </div>
+    </div> -->
         <p class="course-d-head margin-top">Requirements</p>
-        <ul>
-            <li class="nav-root black-color font-size color-change">Internet Access </li>
-            <li class="nav-root black-color font-size color-change">You should know your way around comouter basics</li>
+        <ul *ngFor="let require of courseDetails.courseOverview.overViewId.requirements;">
+            <li class="nav-root black-color font-size color-change">{{require}} </li>
+            
         </ul>
         <p class="course-d-head margin-top">Instructor</p>
         <div class="instructor-details">
             <div class="instructor-image">
-                <img src="../../assets/images/img_instructor1 copy@3x 1.png" alt="" width="80em" height="80em">
+                <img [src]="courseDetails.courseOverview.overViewId.instructor.instructorImage" alt="" width="80em" height="80em">
             </div>
             <div class="name-professional">
-                <p class="course-d-head margin">Dean Mathew</p>
-                <p class="nav-root black-color font-size color-change">User interface teacher www.appledesigntips.com</p>
+                <p class="course-d-head margin">{{courseDetails.courseOverview.overViewId.instructor.name}}</p>
+                <p class="nav-root black-color font-size color-change">{{courseDetails.courseOverview.overViewId.instructor.url}}</p>
             </div>
         </div>
         <p class="nav-root black-color font-size height color-change">
-            Back in 2010, I started brainspin with a desire to design compelling and engaging apps. For over 7 years, I have designed many high profile web and iPhone applications. The applications range from 3D medical aided web applications to project management applications for niche industries. 
-
-I am also the founder of a large local design organization,  <span class="show-more">Show more</span>
+            {{courseDetails.courseOverview.overViewId.instructor.description}}<span class="show-more">Show more</span>
         </p>
 
 
@@ -184,47 +184,76 @@ I am also the founder of a large local design organization,  <span class="show-m
       <div class="chapters-part" *ngIf="course_details_active == false">
         <p class="course-d-head margin-top font margin-less">Course Content</p>
         <p class="nav-root black font-size">
-          7 Chapter | 46 lessons | 6 Assignment Test | 3.5h
+          {{chapterDetails.listOfChapters.courseContent.totalChapters}} Chapter | {{chapterDetails.listOfChapters.courseContent.totalLessons}} lessons | {{chapterDetails.listOfChapters.courseContent.totalTests}} Assignment Test | {{chapterDetails.listOfChapters.courseContent.totalDuration | totalLength}}h
           total length
         </p>
       </div>
       <div class="chapter-height" *ngIf="course_details_active == false">
         
-          <div class="chapters-part">
+          <div class="chapters-part" *ngFor="let chapter of chapterDetails.listOfChapters.totalChapters[0].chapters;index as i">
               
               <div class="chapters">
-                  <p class="chapter-name">Chapter 1 - Introduction to the course</p>
-                  <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == false">add</mat-icon>
-                  <mat-icon class="matIcon point" (click)="displaySubChapter()" *ngIf="display_sub_chapter == true">remove</mat-icon>
+                  <p class="chapter-name">Chapter {{chapter.chapterNumber}} - {{chapter.chapterTitle}}</p>
+                  <mat-icon class="matIcon point" (click)="displaySubChapter(chapter.chapterNumber)" *ngIf="display_sub_chapter == null || display_sub_chapter !=  chapter.chapterNumber">add</mat-icon>
+                  <mat-icon class="matIcon point" (click)="closedisplaySubChapter()" *ngIf="display_sub_chapter ==  chapter.chapterNumber">remove</mat-icon>
                 </div>
              
-            <div class="chapter-data" *ngIf="display_sub_chapter == true">
+            <div class="chapter-data" *ngIf="display_sub_chapter == chapter.chapterNumber">
                <div class="stepper">
                    <div class="sub-course">
-                       <div class="select-icon">
-                           <div class="cirlce-image">
-                               <img src="../../assets/images/Vector.png" alt="" class="icon">
-                               <div class = "vertical"></div>
+                       <div class="select-icon" *ngFor = "let lesson of chapter.lessons;index as xyz">
+                           <div class="cirlce-image" [class.complete-course]="lesson.serialNumberOfLesson <= watch_chapter_number" [class.pending]="watch_chapter_number < lesson.serialNumberOfLesson">
+                               <img src="../../assets/images/Vector.png" alt="" class="icon" *ngIf="watch_chapter_number > lesson.serialNumberOfLesson">
+                               <img src="../../assets/images/Ellipse 7.png" alt="" class="icon z-index" *ngIf="watch_chapter_number <= lesson.serialNumberOfLesson">
+                               <div class = "vertical" *ngIf="(chapter.numberOfLessons-1) >= xyz && chapter.test != null" [class.complete-course-line]="watch_chapter_number > lesson.serialNumberOfLesson" [class.pending-line]="watch_chapter_number <= lesson.serialNumberOfLesson"></div>
+                               <div class = "vertical" *ngIf="(chapter.numberOfLessons-2) >= xyz && chapter.test == null" [class.complete-course-line]="watch_chapter_number > lesson.serialNumberOfLesson" [class.pending-line]="watch_chapter_number <= lesson.serialNumberOfLesson"></div>
                            </div>
                            
                            <div class="sub-course-details">
                               <div class="s-c-d">
-                                <p class="chapter-number margin">20</p>
+                                <p class="chapter-number margin">{{lesson.serialNumberOfLesson}}</p>
                                 <div class="couraseName">
-                                    <p class="chapter-name chapter-name1 margin active-video">Creating a New Project and File</p>
-                                <p class="chapter-duration margin">01.38 mins</p>
+                                    <p class="chapter-name chapter-name1 margin active-video">{{lesson.title}}</p>
+                                <p class="chapter-duration margin">{{lesson.duration | lessonDuration}}</p>
                                 </div>
                               </div>
                               <div class="image2 point">
-                                  <img src="../../assets/images/Red Play.svg" alt="" class="icon1">
-                                  <img src="../../assets/images/Red Play.svg" alt="" class="icon" *ngIf="false">
+                                  <img src="../../assets/images/Red Play.svg" alt="" class="icon1" *ngIf="lesson.serialNumberOfLesson <= watch_chapter_number">
+                                  <img src="../../assets/images/grey play.svg" alt="" class="icon1" *ngIf="watch_chapter_number < lesson.serialNumberOfLesson">
                               </div>
     
                            </div>
+
+                           
                            
                        </div>
+                       <div class="select-icon" *ngIf="chapter.test != null">
+                        <div class="cirlce-image pending down">
+                            <!-- <img src="../../assets/images/Vector.png" alt="" class="icon"> -->
+                                <img src="../../assets/images/Ellipse 7.png" alt="" class="icon z-index">
+                            <!-- <div class = "vertical" *ngIf="(chapter.numberOfLessons-1) >= xyz" [class.complete-course-line]="watch_chapter_number > lesson.serialNumberOfLesson" [class.pending-line]="watch_chapter_number <= lesson.serialNumberOfLesson"></div> -->
+                         </div>
+                        
+                        <div class="sub-course-details right">
+                           <div class="s-c-d">
+                             <p class="chapter-number margin">
+                                 <img src="../../assets/images/Shape (5).png" alt="">
+                             </p>
+                             <div class="couraseName">
+                                 <p class="chapter-name chapter-name1 margin active-video">{{chapter.test.testTitle}}</p>
+                             <p class="chapter-duration margin">{{chapter.test.totalTimeAlloted | durationPipe}} | {{chapter.test.totalQuestions}} questions</p>
+                             </div>
+                           </div>
+                          
+    
+                        </div>
+                       </div>
                        
-                       <div class="select-icon">
+                        
+                        
+            
+                       
+                       <!-- <div class="select-icon">
                         <div class="cirlce-image">
                             <img src="../../assets/images/Ellipse 7.png active-video" alt="" class="icon">
                             <div class = "vertical verticl-grey"></div>
@@ -244,8 +273,8 @@ I am also the founder of a large local design organization,  <span class="show-m
     
                         </div>
                         
-                    </div>
-                    <div class="select-icon">
+                    </div> -->
+                    <!-- <div class="select-icon">
                         <div class="cirlce-image circle-image-color">
                             <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
                             <div class = "vertical verticl-grey"></div>
@@ -265,8 +294,8 @@ I am also the founder of a large local design organization,  <span class="show-m
     
                         </div>
                         
-                    </div>
-                    <div class="select-icon">
+                    </div> -->
+                    <!-- <div class="select-icon">
                         <div class="cirlce-image circle-image-color">
                             <img src="../../assets/images/Ellipse 7.png" alt="" class="icon">
                             
@@ -286,14 +315,14 @@ I am also the founder of a large local design organization,  <span class="show-m
     
                         </div>
                         
-                    </div>
+                    </div> -->
                        
                    </div>
                </div>
             </div>
           </div>
     
-          <div class="chapters-part" *ngIf="course_details_active == false">
+          <!-- <div class="chapters-part" *ngIf="course_details_active == false">
               
             <div class="chapters">
                 <p class="chapter-name">Chapter 1 - Introduction to the course</p>
@@ -600,11 +629,11 @@ I am also the founder of a large local design organization,  <span class="show-m
                  </div>
              </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
-      <div class="join-course">
-          <p class="margin point">Join Course</p>
+      <div class="join-course"  *ngIf="courseDetails.isEnrolled == null" >
+          <p class="margin point" (click)="joinCourse()">Join Course</p>
       </div>
     </div>
 </div>

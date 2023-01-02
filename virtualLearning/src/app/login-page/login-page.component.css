@@ -28,7 +28,7 @@ img{
 .text, .welcome-text{
     font-family: 'biko',sans-serif;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     margin: 0;
     
     /* line-height: 3.5rem; */
@@ -40,31 +40,39 @@ img{
    
     width: 70%;
     margin: auto;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    font-family: 'proxima nova','sans-serif';
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-family: 'Proxima Nova Soft';
     color:#7A7A7A;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 2.5rem;
     text-align: center;
+    font-weight: bold;
    
 }
 .pagination{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap:20%;
+    gap:15%;
     
     margin-bottom: 5%;
 }
-.dot, .dash{
-    font-size: 3rem;
-    color:#D8D8D8;
+.div{
+    display: block;
+    color: transparent;
+    background-color: #EE5C4D;
+    width: 25px;
+    height: 3px;
+    border-radius: 50px;
+    /* margin-top: 30%; */
 }
-.dash{
-    margin-top: -19%;
-    color:#EE5C4D;
+.dot{
+    width: 5px;
+    border-radius: 50%;
+    background-color:#D8D8D8;
 }
+
 .forgot{
     display: none;
 }
@@ -80,29 +88,36 @@ img{
     
 }
 .logo{
-    width: 100%;
+    width: 60%;
+    height: 15%;
+    /* margin-bottom: 20%; */
     display: flex;
+    margin: auto;
     justify-content: space-around;
 }
 .logo-image{
-    width: 30%;
-    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    
 }
 .welcome-text{
     color: #fff;
-    margin-top: 8%;
-    margin-bottom: 8%;
+    margin-top: 15%;
+    margin-bottom: 5%;
     font-weight: bold;
-    font-size: 2.0rem;
-    /* line-height: 5.5rem; */
-    font-family: 'Proxima Nova', sans-serif;
+    font-size: 2.4rem;
+    line-height: 3.5rem;
+    font-family: Proxima Nova Soft;
 }
 
 .sub-welcome-text{
+    width: 100%;
     font-family: 'proxima nova soft';
-    color:#fff;
-    font-size: 1.5rem;
+    color:rgba(255,255,255,0.6);
+    font-size: 1.4rem;
     line-height: 2.5rem;
+    font-weight: bold;
 }
 .social-button{
     display: flex;
@@ -110,22 +125,29 @@ img{
     align-items: center;
     margin-bottom: 5%;
 }
+.image-div{
+    width: 1em;
+    height: 1.2em;
+}
 .social-image{
-    width: 60%;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
    
 }
 .button{
-    /* width: 40%; */
-    padding: 2% 18.5%;
+    width: 43%;
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
     background-color: white;
     border-radius: 4px;
     border: none;
     
 }
-.facebook{
-    /* background-color: red; */
-    padding: 2.1% 22.5%;
-}
+
 
 /* login form field */
 .login-form{
@@ -149,6 +171,8 @@ img{
 
 .login-form input{
     color: #fff;
+    font-size: 1.6rem;
+    font-family: Avenir,Proxima Nova Soft;
     /* border-bottom: 1px solid regba(255,255,255,0.4); */
 }
 .login-form button{
@@ -159,19 +183,21 @@ img{
     border: none;
     padding: 3% 0;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 .register-text{
     margin-top: 5%;
     color:#fff;
-    font-family: 'Proxima Nova Soft';
+    font-family: Proxima Nova Soft;
     font-size: 1.4rem;
+    font-weight: bold;
     /* line-height: 3.5rem; */
 }
 .link{
     cursor: pointer;
     color: #EE5C4D;
 }
+
 
 @media(max-width:1150px){
     .button{
@@ -194,18 +220,33 @@ img{
         margin: auto;
        margin-bottom: 3%;
     }
+
+    .logo{
+        width: 75%;
+        height: 15%;
+       
+    }
+
    
 }
 
 @media(max-width:700px){
+    .logo{
+        display: none;
+    }
     .login-container{
         margin: 0;
-        min-height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
         text-align: left;
         
     }
     .image-part{
         display: none;
+    }
+    .image-div{
+        width: 1.4em;
+        height: 1.4em;
     }
     .login-part{
         width: 90%;
@@ -213,11 +254,9 @@ img{
         margin-right: 5%;
         background-color: #fff;
     }
-    .logo-image{
-        display: none;
-    }
+    
     .welcome-text{
-        margin-top: 15%;
+        /* margin-top: 15%; */
         font-size: 2.6rem;
         line-height: 3.5rem;
         color: rgba(43,43,43,1);
@@ -229,18 +268,15 @@ img{
         letter-spacing: 0;
         line-height: 2.0rem;
     }
-    .social-image{
-        width: 60%;
-    }
+   
+   
     .button{
         border: 1px solid rgba(119,134,158,0.3);
         border-radius: 6px;
         padding: 2% 16%;
         margin-top: 8%;
     }
-    .facebook{
-        padding: 2% 17%;
-    }
+   
     .login-form mat-label{
         color: rgba(122,122,122,1);
         font-family: Avenir;
@@ -288,6 +324,16 @@ img{
 }
 .login-form mat-form-field:focus{
     outline: green;
+}
+
+.login-form button{
+    font-size: 1.6rem;
+    font-family: Proxima Nova Soft;
+    font-weight: bold;
+}
+.sub-welcome-text,.register-text{
+    font-weight: 400;
+    font-family: Proxima Nova Soft;
 }
 
    

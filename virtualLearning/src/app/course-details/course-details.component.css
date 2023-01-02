@@ -83,6 +83,9 @@ line-height: 2.4rem;
    background-image:linear-gradient(to right,rgba(0,0,0,0.83),rgba(255,255,255,0.1));
 
 }
+.z-index{
+    z-index: 1;
+}
 .chap-name,.duration-chap{
     font-family: Proxima Nova Soft;
     font-size: 1.6rem;
@@ -248,7 +251,12 @@ ul{
     font-family: Proxima Nova Soft;
 }
 .black{
-    color:#000;
+    color:#111;
+
+}
+.opacity{
+    opacity: 1;
+    /* font-weight: 300; */
 }
 
 /* Chapter part */
@@ -297,7 +305,6 @@ ul{
 }
 
 .cirlce-image{
-    background-color: #1EAB0D;
     width: 1em;
     height: 1em;
     border-radius: 50%;
@@ -307,6 +314,20 @@ ul{
     justify-content: center;
     align-items: center;
     position: relative;
+}
+.complete-course{
+    background-color: #1EAB0D;
+  
+}
+.complete-course-line{
+    border-left: 3px solid #1EAB0D;
+}
+.pending{
+    background-color: #E1E1E1;
+    
+}
+.pending-line{
+    border-left: 3px solid #E1E1E1;
 }
 
 .chapter-number{
@@ -337,8 +358,8 @@ ul{
     background-color: #E1E1E1;
 }
 .vertical {
-    border-left: 3px solid #1EAB0D;
-    height: 6em;
+    
+    height: 4.6em;
     position: absolute;
     top: 100%;
     z-index: 0;
@@ -362,6 +383,8 @@ ul{
 .close-details,.courseCategory,.videoNavigationPart,.vidio-display{
     display: none;
 }
+
+
 @media(max-width:750px){
     .vertical{
         height: 6.8em;

@@ -4,7 +4,7 @@
             <p class="header">Search Filters</p>
         </div>
         <div class="icon">
-            <mat-icon mat-dialog-close class="color point">close</mat-icon>
+            <mat-icon (click)="matClose()" class="color point">close</mat-icon>
         </div>
 
     </div>
@@ -84,7 +84,7 @@
       <div class="top-search margin-top">
           <p class="search-head">Duration</p>
           <div class="button-list">
-            <div class="search-category point padding" (click)="selectDuration([5,10],0)" [class.backgroundColor]="index.includes(0)">
+            <div class="search-category point padding" (click)="selectDuration([2,3],0)" [class.backgroundColor]="index.includes(0)">
              
               5/10 Chapters
             </div>
@@ -110,7 +110,7 @@
       </div>
 
       <div class="filter-submit">
-        <button mat-raised-button class="filter" (click)="filterCourse()" mat-dialog-close>Apply Filter</button>
+        <button mat-raised-button class="filter" (click)="filterCourse()">Apply Filter</button>
         <button mat-raised-button (click)="clearSelectData()">Clear All</button>
       </div>
 </div>
