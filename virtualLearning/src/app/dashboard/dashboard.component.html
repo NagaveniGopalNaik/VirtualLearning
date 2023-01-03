@@ -35,11 +35,11 @@
                         <img [src]="eachCourse.courseImage" alt="" class="image">
                         
                         <div class="course-details">
-                            <div>
+                            <div class="c-s">
                                 <p class="course-name-style">{{eachCourse.courseTitle}}</p>
                                 <p class="course-name-style chap-size">{{eachCourse.courseContent.totalChapters}}/{{eachCourse.courseContent.totalLessons}} Chapters</p>
                             </div>
-                            <div class="continue">{{eachCourse.category}}</div>
+                            <div class="continue point" (click)="continue(eachCourse)">Continue</div>
                         </div>
                     </div>
                   
@@ -64,7 +64,7 @@
                           <span class="image-div1">
                             <img [src]="categoryImage[i]" alt="">
                           </span>
-                          <span class="category-text margin-left">{{eachCategory}}</span>
+                          <span class="category-text font-style margin-left">{{eachCategory}}</span>
                         </div>
                 </div>
             </div>
@@ -91,9 +91,11 @@
                         <div class="course-type">{{choice.category}}</div>
                         </div>
                     </div>
+                    <div class="details-data">
                     <p class="see-all each-course-name">{{choice.courseTitle}}</p>
                    
                     <p class="see-all each-course-chapter chap-size">{{choice.courseContent.totalChapters}}&nbsp;Chapters</p>
+                </div>
                 </mat-card>
             </div>
            </div>
@@ -117,11 +119,12 @@
                             <video [src]="topBusiness.videoLink" controls class="vidio-size" type="video/mp3" *ngIf="display_video_id == topBusiness._id"></video>
                            
                         </div>
-                        
+                        <div class="details-data">
                         <p class="see-all each-course-name">{{topBusiness.courseTitle}}</p>
                         <div class="chapter-clock">
-                            <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;Chapters</p>
+                            <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;&nbsp;Chapters</p>
                         <p class="see-all each-course-chapter margin chap-size"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;{{topBusiness.courseContent.totalDuration | duration}}</p>
+                        </div>
                         </div>
                     </mat-card>
                 </div>
@@ -136,7 +139,7 @@
                 
             </div>
             <div class="choice-course">
-                <mat-card class="each-choice-course" *ngFor="let topBusiness of topWebCourse;index as i">
+                <mat-card class="each-choice-course each-choice23" *ngFor="let topBusiness of topWebCourse;index as i">
                     <div class="image-course-type each-video-course">
                         <img [src]="topBusiness.courseImage" alt="" *ngIf="display_video_id != topBusiness._id">
                         <div class="play-button point" (click)="displayVideo(topBusiness._id)" *ngIf="display_video_id != topBusiness._id">
@@ -149,7 +152,7 @@
                    <div class="details-data">
                     <p class="see-all each-course-name">{{topBusiness.courseTitle}}</p>
                     <div class="chapter-clock">
-                        <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;Chapters</p>
+                        <p class="see-all each-course-chapter margin">{{topBusiness.courseContent.totalChapters}}&nbsp;&nbsp;Chapters</p>
                     <p class="see-all each-course-chapter margin chap-size"><img src="../../assets/images/clock.png"  width="20%" alt="">&nbsp;{{topBusiness.courseContent.totalDuration | duration}}</p>
                    </div>
                     </div>

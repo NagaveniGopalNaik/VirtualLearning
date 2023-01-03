@@ -16,6 +16,7 @@ chapterDetails:any;
 courseTitle:any;
 showSubChapter :any;
 watch_chapter_number:any;
+chapter_completed:any;
   constructor(private details:DetailsService) { }
 
   ngOnInit(): void {
@@ -86,6 +87,7 @@ this.details.getCourseOverviewDetails().subscribe({
         
         this.chapterDetails=data;
         this.watch_chapter_number = this.chapterDetails.isEnrolled.ongoingSerialNumber;
+        this.chapter_completed =this.chapterDetails.isEnrolled.chaptersCompleted;
         console.log(this.watch_chapter_number);
         
         console.log(this.chapterDetails);

@@ -59,6 +59,15 @@ this.display = false;
     
   }
 
+  refreshHeader(){
+   if(sessionStorage.getItem('login')){
+    this.getUserImage();
+    this.getTopSearchService();
+    this.getCourseCategoryData();
+    sessionStorage.removeItem('login');
+   }
+  }
+
   displayDropDown(){
     
 this.display_dropdown =true;
@@ -95,7 +104,7 @@ this.display_dropdown =true;
 searchKey(){
   
   this.filter_active = false;
-    this.searchCourseDetails = [];
+    // this.searchCourseDetails = [];
   
 let data = {
   "text":this.searchKeyData
@@ -142,7 +151,7 @@ if(this.searchKeyData == '' && this.filter_active == false && this.categorySelec
   searchCatogary(data:any){
     this.categorySelect = true;
     this.filter_active = false;
-    this.searchCourseDetails = [];
+    // this.searchCourseDetails = [];
 this.searchKeyData = data;
 this.searchOption = false;
     this.searchCancel = true;

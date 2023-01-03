@@ -52,6 +52,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-vertical-stepper{
     background-color: red;
 }
+.mat-card{
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
 
 

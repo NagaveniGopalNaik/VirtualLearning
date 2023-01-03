@@ -3,11 +3,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1.5%;
+    margin-top: 1em;
 }
 
 .nav-root{
     font-family: Biko;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: 2rem;
     color: #7A7A7A;
     font-weight: 200;

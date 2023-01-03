@@ -147,6 +147,12 @@ console.log(this.topBusinessCourse);
   }
 
 
+  continue(course:any){
+    sessionStorage.setItem('course-id',course._id);
+    sessionStorage.setItem('course-name',course.courseTitle);
+    this.router.navigate(['/course-details']);
+  }
+
   getDesignTopCourse(){
     this.dashboardService.getBusinessTopCourse("Design").subscribe({
       next:(data)=>{

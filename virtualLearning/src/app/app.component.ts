@@ -11,6 +11,19 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'virtualLearning';
   currentRoute:any;
+innerWidth:any;
+display=true;
+  @HostListener('window:resize', ['$event'])
+onResize(event:any) {
+  this.innerWidth = window.innerWidth;
+  console.log(this.innerWidth);
+  if(this.innerWidth < 700){
+this.display = false;
+  } else {
+    this.display = true;
+  }
+  
+}
   constructor(private router: Router){
     console.log(router.url);
     

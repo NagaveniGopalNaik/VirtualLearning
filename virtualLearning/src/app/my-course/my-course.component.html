@@ -20,7 +20,7 @@
                         <p *ngIf="course_completion_status == 'Ongoing'" class="course-name-style chap-size">{{course.courseContent.totalChapters}}/{{course.courseContent.totalLessons}} Chapters</p>
                         <p *ngIf="course_completion_status == 'Completed'" class="course-name-style chap-size">{{course.approvalRate}} Approval Rate</p>
                     </div>
-                    <div class="continue point" *ngIf="course_completion_status == 'Ongoing'" (click)="continue(course._id)">Continue</div>
+                    <div class="continue point" *ngIf="course_completion_status == 'Ongoing'" (click)="continue(course)">Continue</div>
                     <div class="continue point" *ngIf="course_completion_status == 'Completed'" (click)="viewCertificate()">View Certificate</div>
                     
                     

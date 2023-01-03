@@ -30,6 +30,7 @@ loginForm!:FormGroup;
           
           alert(this.loginData.message);
         if(this.loginData.message == 'Login successful'){
+          sessionStorage.setItem('login','success');
           sessionStorage.setItem('token',this.loginData.access_token)
           this.router.navigate(['/dashboard']);
         }

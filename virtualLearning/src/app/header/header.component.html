@@ -1,5 +1,6 @@
 <!-- {{getCourse()}} -->
 <!-- {{backtoData()}} -->
+{{refreshHeader()}}
 {{closeDialog()}}
 <mat-card class="header-body" [class.header-body1]="searchOk == true">
   <div class="header-part" [class.header-part1]="searchOk == true">
@@ -31,14 +32,14 @@
             />
             
           </div>
-  
+         
           
         </div>
         <div class="search-part"   [class.search-ok]="searchOk == true" *ngIf="searchOption == true" [class.mobile-menu]="search_view == true">
           <div class="top-search" *ngIf="nodata == false">
             <p class="search-head">Top Search</p>
             <div class="button-list gap">
-              <div class="search-category point"  [class.active]="search == active" (click)="searchCatogary(search)" *ngFor="let search of topSearchService;index as i">{{search}}</div>
+              <div class="search-category search-category1 point"  [class.active]="search == active" (click)="searchCatogary(search)" *ngFor="let search of topSearchService;index as i">{{search | titlecase}}</div>
               
             </div>
           </div>
@@ -180,66 +181,92 @@
 <div class="mobile-screen-header" *ngIf ="currentRoute != '/my-course'">
   <img src="../../assets/images/icn_hamburgermenu@1.5x.svg" alt="" class="image" (click)="gotoMenu()" routerLink="/dashboard">
 
-    <mat-icon class="search-icon" (click)="gotoSearch()">search</mat-icon>
+    <mat-icon class="search-icon3" (click)="gotoSearch()">search</mat-icon>
   
 </div>
 <div class="mobile-menu" *ngIf="search_view == true">
  
   <div class="search-part" [class.search-ok]="searchOk == true" [class.mobile-menu]="search_view == true">
     
-    <div class="searchBar">
-      <mat-icon class="point back" (click)="closeSearchs()">arrow_back</mat-icon>
-      <p class="search-text">Search</p>
-    </div>
-    <div class="search-filter">
-      <div class="searchbar">
-        <mat-icon class="search-icon1" (click)="searchKey()">search</mat-icon>
-        <mat-icon class="color" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
-        <input
-          type="text"
-          placeholder="Search"
-          (click)="searchCourse()"
-          [(ngModel)]="searchKeyData"
-          (keyup)="searchKey()"
-        />
-        
+    
+      <div class="searchBar">
+        <mat-icon class="point back" (click)="closeSearchs()">arrow_back</mat-icon>
+        <p class="search-text">Search</p>
       </div>
-      <div class="filter point search-ok" (click)="filter_course()">
-          <img
-            src="../../assets/images/Mask_Group_9 Clipped.png"
-            alt=""
-            
-      /></div>
-    </div>
-    <div class="search-mobile-view">
-      <div class="top-search top-search1" *ngIf="nodata == false">
-        <p class="search-head">Top Search</p>
-        <div class="button-list gap">
-          <div class="search-category point"  [class.active]="search == active" (click)="searchCatogary(search)" *ngFor="let search of topSearchService;index as i">{{search}}</div>
+      <div class="search-filter">
+        <div class="searchbar">
+          <mat-icon class="search-icon1 point" (click)="searchKey()">search</mat-icon>
           
+          <input
+            type="text"
+            placeholder="Search"
+            (click)="searchCourse()"
+            [(ngModel)]="searchKeyData"
+            (keyup)="searchKey()"
+          />
+          <mat-icon class="color point" (click)="clearData()" *ngIf="searchCancel == true">close</mat-icon>
         </div>
+        <div class="filter-images point" (click)="filter_course()">
+          <img src="../../assets/images/icn_filter_search@1.5x.svg" alt="">
+        </div>
+  
       </div>
-      <div class="top-search top-search1" *ngIf="nodata == true">
-        <p class="no-data">No matching course</p>
-        <p class="sub-no-data">Try a different search or browse categories</p>
-      </div>
-      <div class="top-search top-search1">
-        <p class="search-head">Search from Categories</p>
-        <div class="button-list gap">
-          
+      <div class="search-parts" *ngIf="searchOption == true">
+      <div class="search-mobile-view">
+        <div class="top-search top-search1" *ngIf="nodata == false">
+          <p class="search-head">Top Search</p>
           <div class="button-list gap">
-            <div class="search-category point" [class.active]="eachCategory == active" *ngFor="let eachCategory of categoryData;index as i" (click)="searchCatogary(eachCategory)">
-              <span class="image-div1">
-                <img [src]="searchCategoryImage[i]" alt="">
-              </span>
-              <span class="category-text margin-left">{{eachCategory}}</span>
-            </div>
-    </div>
-         
-         
+            <div class="search-category active search-category1 point"  [class.active]="search == active" (click)="searchCatogary(search)" *ngFor="let search of topSearchService;index as i">{{search | titlecase}}</div>
+            
+          </div>
+        </div>
+        <div class="top-search top-search1" *ngIf="nodata == true">
+          <div class="image-no-search">
+            <img src="../../assets/images/img_search no result@1.5x.svg" alt="">
+          </div>
+          <p class="no-data">No matching course</p>
+          <p class="sub-no-data">Try a different search or browse categories</p>
+        </div>
+        <div class="top-search top-search1">
+          <p class="search-head">Search from Categories</p>
+          <div class="button-list gap">
+            
+            <div class="button-list gap">
+              <div class="search-category point" [class.active]="eachCategory == active" *ngFor="let eachCategory of categoryData;index as i" (click)="searchCatogary(eachCategory)">
+                <span class="image-div1">
+                  <img [src]="searchCategoryImage[i]" alt="">
+                </span>
+                <span class="category-text margin-left">{{eachCategory}}</span>
+              </div>
+      </div>
+  
+      
+           
+           
+          </div>
         </div>
       </div>
     </div>
+
+
+    <div class="search-data" *ngIf="searchOption == false">
+      <div class="search-datas" (click)="gotoCourseDetails(searchData)" *ngFor="let searchData of searchCourseDetails;index as i">
+          <div class="image-details">
+              <div class="course-image">
+                  <img [src]="searchData.courseImage"  *ngIf="filter_active == false" alt="" width="70em" height="70em" class="courseImage">
+                  <img [src]="searchData.image"  *ngIf="filter_active == true" alt="" width="70em" height="70em" class="courseImage">
+           <div class="courseDetails">
+               <p class="courseName" *ngIf="filter_active == false">{{searchData.courseTitle}}</p>
+               <p class="courseName" *ngIf="filter_active == true">{{searchData.title}}</p>
+               <p class="chapterCount" *ngIf="filter_active == false">{{searchData.courseContent.totalChapters}} Chapter</p>
+               <p class="chapterCount" *ngIf="filter_active == true">{{searchData.totalChapters}} Chapter</p>
+               <button class="course-button">{{searchData.category}}</button>
+           </div>
+              </div>
+          </div>
+      </div>
+      
+      </div>
     
     <!-- <div class="top-search" *ngIf="searchOption == true">
       <p class="search-head">Top Search</p>

@@ -30,7 +30,7 @@
     </div>
 <div class="course-name-duration" *ngIf="display_name==true">
     <p class="chap-name">Introduction</p>
-    <p class="duration-chap" *ngIf="course_details_active == true">{{courseDetails.courseOverview.overViewId.previewThisCourse.videoDuration | durationPipe}}</p>
+    <p class="duration-chap">{{courseDetails.courseOverview.overViewId.previewThisCourse.videoDuration | durationPipe}}</p>
 </div>
 </div>
 <div class="course-name-category">
@@ -48,7 +48,7 @@
     <p [class.details-active]="course_details_active == true" (click)="courseDetailsOverview()">Overview</p>
     <p [class.details-active]="course_details_active == false" (click)="courseDetailsChapter()">Chapters</p>
 </div>
-<p class="nav-root nav-root-highlight font-size" *ngIf="course_details_active == true">
+<p class="nav-root nav-root-highlight font-size color-blue" *ngIf="course_details_active == true">
     {{courseDetails.courseOverview.overViewId.description}}
 </p>
 
@@ -92,7 +92,7 @@
                  <img src="../../assets/images/overview/Shape (3).png" alt="" class="icon" width="80%">
              </div>
             
-                <p class="nav-root margin font-size mobile-details-font-size">3.5 total hours video</p>
+                <p class="nav-root over-view-include margin font-size mobile-details-font-size">3.5 total hours video</p>
              
          </div>
          <div class="course-includes">
@@ -100,7 +100,7 @@
                 <img src="../../assets/images/overview/Shape (1).svg" alt="" class="icon" width="80%">
             </div>
            
-               <p class="nav-root margin font-size">Support Files</p>
+               <p class="nav-root over-view-include margin font-size">Support Files</p>
             
         </div>
         <div class="course-includes">
@@ -108,7 +108,7 @@
                 <img src="../../assets/images/overview/Shape (2).svg" alt="" class="icon" width="80%">
             </div>
            
-               <p class="nav-root margin font-size">6 Module Test</p>
+               <p class="nav-root over-view-include margin font-size">6 Module Test</p>
             
         </div>
         <div class="course-includes">
@@ -116,7 +116,7 @@
                 <img src="../../assets/images/overview/Shape (1).png" alt="" class="icon" width="80%">
             </div>
            
-               <p class="nav-root margin font-size">Full lifetime access</p>
+               <p class="nav-root over-view-include margin font-size">Full lifetime access</p>
             
         </div>
         <div class="course-includes">
@@ -124,7 +124,7 @@
                 <img src="../../assets/images/overview/Shape (2).png" alt="" class="icon" width="90%">
             </div>
            
-               <p class="nav-root margin font-size">Access on mobile, desktop and tv</p>
+               <p class="nav-root over-view-include margin font-size">Access on mobile, desktop and tv</p>
             
         </div>
         <div class="course-includes">
@@ -132,7 +132,7 @@
                 <img src="../../assets/images/overview/Shape (1).svg" alt="" class="icon" width="80%">
             </div>
            
-               <p class="nav-root margin font-size">Certificate of Completion</p>
+               <p class="nav-root over-view-include margin font-size">Certificate of Completion</p>
             
         </div>
         <p class="course-d-head margin-top">What you’ll learn</p>
@@ -193,7 +193,7 @@
           <div class="chapters-part" *ngFor="let chapter of chapterDetails.listOfChapters.totalChapters[0].chapters;index as i">
               
               <div class="chapters">
-                  <p class="chapter-name">Chapter {{chapter.chapterNumber}} - {{chapter.chapterTitle}}</p>
+                  <p class="chapter-name"  [class.complete-course-color]="chapter.chapterNumber <=chapter_completed">Chapter {{chapter.chapterNumber}} - {{chapter.chapterTitle}}</p>
                   <mat-icon class="matIcon point" (click)="displaySubChapter(chapter.chapterNumber)" *ngIf="display_sub_chapter == null || display_sub_chapter !=  chapter.chapterNumber">add</mat-icon>
                   <mat-icon class="matIcon point" (click)="closedisplaySubChapter()" *ngIf="display_sub_chapter ==  chapter.chapterNumber">remove</mat-icon>
                 </div>
@@ -213,7 +213,7 @@
                               <div class="s-c-d">
                                 <p class="chapter-number margin">{{lesson.serialNumberOfLesson}}</p>
                                 <div class="couraseName">
-                                    <p class="chapter-name chapter-name1 margin active-video">{{lesson.title}}</p>
+                                    <p class="chapter-name chapter-name1 margin active-video" [class.lesson-completed]="lesson.serialNumberOfLesson <= watch_chapter_number">{{lesson.title}}</p>
                                 <p class="chapter-duration margin">{{lesson.duration | lessonDuration}}</p>
                                 </div>
                               </div>

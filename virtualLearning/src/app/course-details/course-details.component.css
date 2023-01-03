@@ -89,19 +89,21 @@ line-height: 2.4rem;
 .chap-name,.duration-chap{
     font-family: Proxima Nova Soft;
     font-size: 1.6rem;
-    font-weight: 300;
+    font-weight: bold;
     
 }
 .chap-name{
     padding-top: 2%;
+    font-size: 2rem;
 }
 .duration-chap{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    /* color:#2BB5F4; */
 }
 .play-button{
     position: absolute;
     width: 10%;
-    top: 30%;
+    top: 38.5%;
     left: 45%;
 }
 
@@ -110,7 +112,7 @@ line-height: 2.4rem;
     
 }
 .name{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin: 0;
 }
@@ -125,7 +127,7 @@ line-height: 2.4rem;
     height: fit-content;
     font-size: 1.2rem;
     padding: 0 1%;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 .line{
     color: #F0F0F0;
@@ -204,23 +206,26 @@ line-height: 2.4rem;
 {
     display: flex;
     gap:5%;
-    
+    border-radius: 4px;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 2%;
 }
 .margin{
     margin: 0;
+    /* line-height: 3rem; */
 }
 .margin-top{
-    margin-top: 7%;
+    margin-top: 2.5em;
 }
 .will-learn{
     display: flex;
     gap: 5%;
+    margin-bottom: 2%;
 }
 ul{
     padding-left: 5%;
+    margin:1.5%;
 }
 .instructor-details{
     display: flex;
@@ -252,6 +257,7 @@ ul{
 }
 .black{
     color:#111;
+    font-weight: 300;
 
 }
 .opacity{
@@ -322,6 +328,7 @@ ul{
 .complete-course-line{
     border-left: 3px solid #1EAB0D;
 }
+
 .pending{
     background-color: #E1E1E1;
     
@@ -383,7 +390,21 @@ ul{
 .close-details,.courseCategory,.videoNavigationPart,.vidio-display{
     display: none;
 }
-
+.color-blue{
+    color: #2BB5F4;
+}
+.over-view-include{
+    color:#7A7A7A;
+}
+.names{
+    font-size: 2.2rem;
+}
+.complete-course-color{
+    color: #1EAB0D;
+}
+.lesson-completed{
+    color:#042C5C;
+}
 
 @media(max-width:750px){
     .vertical{
@@ -395,6 +416,7 @@ ul{
 
 
 @media(max-width:700px){
+    
     .course-name,.course-name-category{
         display: none;
     }
@@ -458,6 +480,7 @@ ul{
     }
     .category{
         width: fit-content;
+        
     }
     .ovr-chap-navbar{
         display: flex;

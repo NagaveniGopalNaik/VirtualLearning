@@ -95,8 +95,9 @@ console.log(this.courseList);
   viewCertificate(){
     this.viewCertificates = true;
   }
-  continue(id:any){
-    sessionStorage.setItem('course-id',id);
+  continue(course:any){
+    sessionStorage.setItem('course-id',course._id);
+    sessionStorage.setItem('course-name',course.courseTitle);
     this.router.navigate(['/course-details']);
   }
 

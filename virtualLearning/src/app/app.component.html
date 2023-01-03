@@ -1,6 +1,6 @@
 {{getCurrentRoute()}}
 
-<div *ngIf="currentRoute != '/login'">
+<div *ngIf="currentRoute != '/login' && (currentRoute != '/course-details' || display==true)">
     <app-header></app-header>
 </div>
 <router-outlet></router-outlet>
